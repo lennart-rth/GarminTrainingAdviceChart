@@ -1,0 +1,32 @@
+[ @file = "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ProgressDelegate.mc"; @line = 1; ]
+using Toybox.WatchUi;
+[ @file = "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ProgressDelegate.mc"; @line = 3; ]
+class MyProgressDelegate extends WatchUi.BehaviorDelegate{
+    [ @file = "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ProgressDelegate.mc"; @line = 3; ]
+    <init> {
+    }
+    [ @file = "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ProgressDelegate.mc"; @line = 3; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ProgressDelegate.mc"; @line = 4; ]
+    function initialize() as Void {
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ProgressDelegate_mc_4_26_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ProgressDelegate.mc" 5 8 ]
+        %tmp.2 = getv ? :BehaviorDelegate;
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ProgressDelegate_mc_4_26_stop:
+    }
+    [ @file = "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ProgressDelegate.mc"; @line = 8; ]
+    function onBack() {
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ProgressDelegate_mc_8_22_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ProgressDelegate.mc" 9 8 ]
+        %tmp.1 = true;
+        ret %tmp.1;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ProgressDelegate_mc_8_22_stop:
+    }
+}
+[ @file = "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ProgressDelegate.mc"; @line = 1; ]
+<init> {
+}

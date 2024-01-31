@@ -1,0 +1,11 @@
+<settings>
+
+    <setting propertyKey="@Properties.intervalsKEY" title="@Strings.ApiKeyTitle">
+        <settingConfig type="alphaNumeric" required="true"/>
+    </setting>
+
+    <setting propertyKey="@Properties.intervalsID" title="@Strings.AthleteIDTitle">
+        <settingConfig type="alphaNumeric" required="true"/>
+    </setting>
+
+</settings>

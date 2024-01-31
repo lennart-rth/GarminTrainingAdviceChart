@@ -1,0 +1,2608 @@
+[ @file = "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc"; @line = 1; ]
+import Toybox.Graphics;
+[ @file = "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc"; @line = 2; ]
+import Toybox.WatchUi;
+[ @file = "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc"; @line = 3; ]
+import Toybox.Lang;
+[ @file = "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc"; @line = 5; ]
+class ImReady4View extends WatchUi.View{
+    [ @file = "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc"; @line = 5; ]
+    <init> {
+    }
+    [ @file = "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc"; @line = 5; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc"; @line = 7; ]
+    function initialize() as Void {
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_7_26_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 8 8 ]
+        %tmp.1 = getm $.Toybox.WatchUi;
+        %tmp.2 = getv %tmp.1 :View;
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_7_26_stop:
+    }
+    [ @file = "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc"; @line = 12; ]
+    function onLayout(dc as Dc) as Void {
+    }
+    [ @file = "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc"; @line = 19; ]
+    function onShow() as Void {
+    }
+    [ @file = "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc"; @line = 22; ]
+    private
+    function polar_to_cartesian(dc as Dc, r, t) {
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_22_56_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 23 8 ]
+        [ "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_22_56_start" "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_22_56_stop" ]
+        %h.1 = local;
+        %tmp.1 = lgetv %dc;
+        %tmp.2 = getv function %tmp.1 :getHeight;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %h.1 %tmp.3;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 24 8 ]
+        [ "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_22_56_start" "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_22_56_stop" ]
+        %w.2 = local;
+        %tmp.4 = lgetv %dc;
+        %tmp.5 = getv function %tmp.4 :getWidth;
+        %tmp.6 = invoke %tmp.4 %tmp.5();
+        lputv %w.2 %tmp.6;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 25 8 ]
+        [ "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_22_56_start" "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_22_56_stop" ]
+        %w_center.3 = local;
+        %tmp.8 = lgetv %w.2;
+        %tmp.9 = 2;
+        %tmp.10 = div %tmp.8 %tmp.9;
+        %tmp.11 = getv function %tmp.10 :toFloat;
+        %tmp.12 = invoke %tmp.10 %tmp.11();
+        lputv %w_center.3 %tmp.12;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 26 8 ]
+        [ "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_22_56_start" "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_22_56_stop" ]
+        %h_center.4 = local;
+        %tmp.14 = lgetv %h.1;
+        %tmp.15 = 2;
+        %tmp.16 = div %tmp.14 %tmp.15;
+        %tmp.17 = getv function %tmp.16 :toFloat;
+        %tmp.18 = invoke %tmp.16 %tmp.17();
+        lputv %h_center.4 %tmp.18;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 28 8 ]
+        [ "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_22_56_start" "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_22_56_stop" ]
+        %xform.5 = local;
+        %tmp.22 = getv ? :AffineTransform;
+        %tmp.19 = newc %tmp.22 ();
+        lputv %xform.5 %tmp.19;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 29 8 ]
+        %tmp.23 = lgetv %xform.5;
+        %tmp.24 = getv function %tmp.23 :translate;
+        %tmp.26 = lgetv %w_center.3;
+        %tmp.28 = lgetv %h_center.4;
+        invoke %tmp.23 %tmp.24(%tmp.26, %tmp.28);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 30 8 ]
+        %tmp.29 = lgetv %xform.5;
+        %tmp.30 = getv function %tmp.29 :rotate;
+        %tmp.32 = getv ? :Math;
+        %tmp.33 = getv function %tmp.32 :toRadians;
+        %tmp.34 = -90;
+        %tmp.36 = lgetv %t;
+        %tmp.37 = add %tmp.34 %tmp.36;
+        %tmp.38 = invoke %tmp.32 %tmp.33(%tmp.37);
+        invoke %tmp.29 %tmp.30(%tmp.38);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 31 8 ]
+        [ "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_22_56_start" "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_22_56_stop" ]
+        %pt.6 = local;
+        %tmp.39 = newa 2;
+        %tmp.41 = lgetv %r;
+        %tmp.42 = dup %tmp.39;
+        %tmp.43 = aputv %tmp.42 0 %tmp.41;
+        %tmp.44 = 0;
+        %tmp.45 = dup %tmp.43;
+        %tmp.46 = aputv %tmp.45 1 %tmp.44;
+        lputv %pt.6 %tmp.46;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 32 8 ]
+        %tmp.47 = lgetv %xform.5;
+        %tmp.48 = getv function %tmp.47 :transformPoint;
+        %tmp.50 = lgetv %pt.6;
+        %tmp.51 = invoke %tmp.47 %tmp.48(%tmp.50);
+        lputv %pt.6 %tmp.51;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 33 8 ]
+        %tmp.53 = lgetv %pt.6;
+        ret %tmp.53;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_22_56_stop:
+    }
+    [ @file = "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc"; @line = 37; ]
+    private
+    function draw_poly(dc as Dc, radius_ele, s0 as Array<Number>, s1 as Array<Number>, s2 as Array<Number>, s3 as Array<Number>, color) {
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_37_144_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 38 8 ]
+        [ "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_37_144_start" "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_37_144_stop" ]
+        %pts.1 = local;
+        %tmp.1 = newa 0;
+        lputv %pts.1 %tmp.1;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 39 8 ]
+        %tmp.2 = lgetv %dc;
+        %tmp.3 = getv function %tmp.2 :setColor;
+        %tmp.5 = lgetv %color;
+        %tmp.6 = getm $.Toybox.Graphics;
+        %tmp.7 = getv %tmp.6 :COLOR_BLACK;
+        invoke %tmp.2 %tmp.3(%tmp.5, %tmp.7);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 40 8 ]
+        [ "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_37_144_start" "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_37_144_stop" ]
+        %span1.2 = local;
+        %tmp.9 = lgetv %s1;
+        %tmp.10 = 1;
+        %tmp.11 = agetv %tmp.9 %tmp.10;
+        %tmp.13 = lgetv %s2;
+        %tmp.14 = 1;
+        %tmp.15 = agetv %tmp.13 %tmp.14;
+        %tmp.16 = sub %tmp.11 %tmp.15;
+        %tmp.17 = getv function %tmp.16 :abs;
+        %tmp.18 = invoke %tmp.16 %tmp.17();
+        lputv %span1.2 %tmp.18;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 41 8 ]
+        [ "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_37_144_start" "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_37_144_stop" ]
+        %span2.3 = local;
+        %tmp.20 = lgetv %s3;
+        %tmp.21 = 1;
+        %tmp.22 = agetv %tmp.20 %tmp.21;
+        %tmp.24 = lgetv %s0;
+        %tmp.25 = 1;
+        %tmp.26 = agetv %tmp.24 %tmp.25;
+        %tmp.27 = sub %tmp.22 %tmp.26;
+        %tmp.28 = getv function %tmp.27 :abs;
+        %tmp.29 = invoke %tmp.27 %tmp.28();
+        lputv %span2.3 %tmp.29;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 43 8 ]
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_43_8_if_stmt:
+        %tmp.30 = 4;
+        %tmp.32 = lgetv %span1.2;
+        %tmp.33 = add %tmp.30 %tmp.32;
+        %tmp.35 = lgetv %span2.3;
+        %tmp.36 = add %tmp.33 %tmp.35;
+        %tmp.37 = 64;
+        %tmp.38 = gt %tmp.36 %tmp.37;
+        bf %tmp.38 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_43_8_if_false;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_43_8_if_true:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_43_36_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 44 12 ]
+        [ "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_43_36_start" "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_43_36_stop" ]
+        %zwi_s2.4 = local;
+        %tmp.39 = newa 2;
+        %tmp.41 = lgetv %s2;
+        %tmp.42 = 0;
+        %tmp.43 = agetv %tmp.41 %tmp.42;
+        %tmp.44 = dup %tmp.39;
+        %tmp.45 = aputv %tmp.44 0 %tmp.43;
+        %tmp.47 = lgetv %s1;
+        %tmp.48 = 1;
+        %tmp.49 = agetv %tmp.47 %tmp.48;
+        %tmp.51 = lgetv %span1.2;
+        %tmp.52 = 2;
+        %tmp.53 = div %tmp.51 %tmp.52;
+        %tmp.54 = sub %tmp.49 %tmp.53;
+        %tmp.55 = dup %tmp.45;
+        %tmp.56 = aputv %tmp.55 1 %tmp.54;
+        lputv %zwi_s2.4 %tmp.56;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 45 12 ]
+        [ "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_43_36_start" "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_43_36_stop" ]
+        %zwi_s3.5 = local;
+        %tmp.57 = newa 2;
+        %tmp.59 = lgetv %s3;
+        %tmp.60 = 0;
+        %tmp.61 = agetv %tmp.59 %tmp.60;
+        %tmp.62 = dup %tmp.57;
+        %tmp.63 = aputv %tmp.62 0 %tmp.61;
+        %tmp.65 = lgetv %s1;
+        %tmp.66 = 1;
+        %tmp.67 = agetv %tmp.65 %tmp.66;
+        %tmp.69 = lgetv %span1.2;
+        %tmp.70 = 2;
+        %tmp.71 = div %tmp.69 %tmp.70;
+        %tmp.72 = sub %tmp.67 %tmp.71;
+        %tmp.73 = dup %tmp.63;
+        %tmp.74 = aputv %tmp.73 1 %tmp.72;
+        lputv %zwi_s3.5 %tmp.74;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 46 12 ]
+        %tmp.75 = self;
+        %tmp.76 = getv function %tmp.75 :draw_poly;
+        %tmp.78 = lgetv %dc;
+        %tmp.80 = lgetv %radius_ele;
+        %tmp.82 = lgetv %s0;
+        %tmp.84 = lgetv %s1;
+        %tmp.86 = lgetv %zwi_s2.4;
+        %tmp.88 = lgetv %zwi_s3.5;
+        %tmp.90 = lgetv %color;
+        invoke %tmp.75 %tmp.76(%tmp.78, %tmp.80, %tmp.82, %tmp.84, %tmp.86, %tmp.88, %tmp.90);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 47 12 ]
+        %tmp.91 = self;
+        %tmp.92 = getv function %tmp.91 :draw_poly;
+        %tmp.94 = lgetv %dc;
+        %tmp.96 = lgetv %radius_ele;
+        %tmp.98 = lgetv %zwi_s3.5;
+        %tmp.100 = lgetv %zwi_s2.4;
+        %tmp.102 = lgetv %s2;
+        %tmp.104 = lgetv %s3;
+        %tmp.106 = lgetv %color;
+        invoke %tmp.91 %tmp.92(%tmp.94, %tmp.96, %tmp.98, %tmp.100, %tmp.102, %tmp.104, %tmp.106);
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_43_36_stop:
+        goto @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_43_8_if_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_43_8_if_false:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_49_13_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 50 12 ]
+        %tmp.107 = lgetv %pts.1;
+        %tmp.108 = getv function %tmp.107 :add;
+        %tmp.109 = self;
+        %tmp.110 = getv function %tmp.109 :polar_to_cartesian;
+        %tmp.112 = lgetv %dc;
+        %tmp.114 = lgetv %s0;
+        %tmp.115 = 0;
+        %tmp.116 = agetv %tmp.114 %tmp.115;
+        %tmp.118 = lgetv %radius_ele;
+        %tmp.119 = mul %tmp.116 %tmp.118;
+        %tmp.121 = lgetv %s0;
+        %tmp.122 = 1;
+        %tmp.123 = agetv %tmp.121 %tmp.122;
+        %tmp.124 = invoke %tmp.109 %tmp.110(%tmp.112, %tmp.119, %tmp.123);
+        invoke %tmp.107 %tmp.108(%tmp.124);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 51 12 ]
+        %tmp.125 = lgetv %pts.1;
+        %tmp.126 = getv function %tmp.125 :add;
+        %tmp.127 = self;
+        %tmp.128 = getv function %tmp.127 :polar_to_cartesian;
+        %tmp.130 = lgetv %dc;
+        %tmp.132 = lgetv %s1;
+        %tmp.133 = 0;
+        %tmp.134 = agetv %tmp.132 %tmp.133;
+        %tmp.136 = lgetv %radius_ele;
+        %tmp.137 = mul %tmp.134 %tmp.136;
+        %tmp.139 = lgetv %s1;
+        %tmp.140 = 1;
+        %tmp.141 = agetv %tmp.139 %tmp.140;
+        %tmp.142 = invoke %tmp.127 %tmp.128(%tmp.130, %tmp.137, %tmp.141);
+        invoke %tmp.125 %tmp.126(%tmp.142);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 53 12 ]
+        for @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_53_12_for_test @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_53_12_for_incr @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_53_12_for_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_53_12_for_init:
+        [ "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_53_12_for_begin" "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_53_12_for_end" ]
+        %i.6 = local;
+        %tmp.143 = 0;
+        lputv %i.6 %tmp.143;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_53_12_for_test:
+        %tmp.145 = lgetv %i.6;
+        %tmp.147 = lgetv %span1.2;
+        %tmp.148 = lt %tmp.145 %tmp.147;
+        bf %tmp.148 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_53_12_for_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_53_12_for_begin:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_53_41_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 54 16 ]
+        %tmp.149 = lgetv %pts.1;
+        %tmp.150 = getv function %tmp.149 :add;
+        %tmp.151 = self;
+        %tmp.152 = getv function %tmp.151 :polar_to_cartesian;
+        %tmp.154 = lgetv %dc;
+        %tmp.156 = lgetv %s1;
+        %tmp.157 = 0;
+        %tmp.158 = agetv %tmp.156 %tmp.157;
+        %tmp.160 = lgetv %radius_ele;
+        %tmp.161 = mul %tmp.158 %tmp.160;
+        %tmp.163 = lgetv %s1;
+        %tmp.164 = 1;
+        %tmp.165 = agetv %tmp.163 %tmp.164;
+        %tmp.167 = lgetv %i.6;
+        %tmp.168 = sub %tmp.165 %tmp.167;
+        %tmp.169 = invoke %tmp.151 %tmp.152(%tmp.154, %tmp.161, %tmp.168);
+        invoke %tmp.149 %tmp.150(%tmp.169);
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_53_41_stop:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_53_12_for_incr:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 53 ]
+        %tmp.170 = lgetv %i.6;
+        %tmp.171 = 1;
+        %tmp.172 = add %tmp.170 %tmp.171;
+        lputv %i.6 %tmp.172;
+        goto @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_53_12_for_test;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_53_12_for_end:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 56 12 ]
+        %tmp.173 = lgetv %pts.1;
+        %tmp.174 = getv function %tmp.173 :add;
+        %tmp.175 = self;
+        %tmp.176 = getv function %tmp.175 :polar_to_cartesian;
+        %tmp.178 = lgetv %dc;
+        %tmp.180 = lgetv %s2;
+        %tmp.181 = 0;
+        %tmp.182 = agetv %tmp.180 %tmp.181;
+        %tmp.184 = lgetv %radius_ele;
+        %tmp.185 = mul %tmp.182 %tmp.184;
+        %tmp.187 = lgetv %s2;
+        %tmp.188 = 1;
+        %tmp.189 = agetv %tmp.187 %tmp.188;
+        %tmp.190 = invoke %tmp.175 %tmp.176(%tmp.178, %tmp.185, %tmp.189);
+        invoke %tmp.173 %tmp.174(%tmp.190);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 57 12 ]
+        %tmp.191 = lgetv %pts.1;
+        %tmp.192 = getv function %tmp.191 :add;
+        %tmp.193 = self;
+        %tmp.194 = getv function %tmp.193 :polar_to_cartesian;
+        %tmp.196 = lgetv %dc;
+        %tmp.198 = lgetv %s3;
+        %tmp.199 = 0;
+        %tmp.200 = agetv %tmp.198 %tmp.199;
+        %tmp.202 = lgetv %radius_ele;
+        %tmp.203 = mul %tmp.200 %tmp.202;
+        %tmp.205 = lgetv %s3;
+        %tmp.206 = 1;
+        %tmp.207 = agetv %tmp.205 %tmp.206;
+        %tmp.208 = invoke %tmp.193 %tmp.194(%tmp.196, %tmp.203, %tmp.207);
+        invoke %tmp.191 %tmp.192(%tmp.208);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 59 12 ]
+        for @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_59_12_for_test @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_59_12_for_incr @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_59_12_for_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_59_12_for_init:
+        [ "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_59_12_for_begin" "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_59_12_for_end" ]
+        %i.7 = local;
+        %tmp.209 = 0;
+        lputv %i.7 %tmp.209;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_59_12_for_test:
+        %tmp.211 = lgetv %i.7;
+        %tmp.213 = lgetv %span2.3;
+        %tmp.214 = lt %tmp.211 %tmp.213;
+        bf %tmp.214 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_59_12_for_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_59_12_for_begin:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_59_41_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 60 16 ]
+        %tmp.215 = lgetv %pts.1;
+        %tmp.216 = getv function %tmp.215 :add;
+        %tmp.217 = self;
+        %tmp.218 = getv function %tmp.217 :polar_to_cartesian;
+        %tmp.220 = lgetv %dc;
+        %tmp.222 = lgetv %s3;
+        %tmp.223 = 0;
+        %tmp.224 = agetv %tmp.222 %tmp.223;
+        %tmp.226 = lgetv %radius_ele;
+        %tmp.227 = mul %tmp.224 %tmp.226;
+        %tmp.229 = lgetv %s3;
+        %tmp.230 = 1;
+        %tmp.231 = agetv %tmp.229 %tmp.230;
+        %tmp.233 = lgetv %i.7;
+        %tmp.234 = add %tmp.231 %tmp.233;
+        %tmp.235 = invoke %tmp.217 %tmp.218(%tmp.220, %tmp.227, %tmp.234);
+        invoke %tmp.215 %tmp.216(%tmp.235);
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_59_41_stop:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_59_12_for_incr:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 59 ]
+        %tmp.236 = lgetv %i.7;
+        %tmp.237 = 1;
+        %tmp.238 = add %tmp.236 %tmp.237;
+        lputv %i.7 %tmp.238;
+        goto @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_59_12_for_test;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_59_12_for_end:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 62 12 ]
+        %tmp.239 = lgetv %dc;
+        %tmp.240 = getv function %tmp.239 :fillPolygon;
+        %tmp.242 = lgetv %pts.1;
+        invoke %tmp.239 %tmp.240(%tmp.242);
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_49_13_stop:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_43_8_if_end:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_37_144_stop:
+    }
+    [ @file = "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc"; @line = 67; ]
+    private
+    function draw_grid(dc as Dc, r, radius_ele, pta, ptb) {
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_67_66_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 68 8 ]
+        %tmp.1 = lgetv %dc;
+        %tmp.2 = getv function %tmp.1 :setColor;
+        %tmp.3 = getm $.Toybox.Graphics;
+        %tmp.4 = getv %tmp.3 :COLOR_BLACK;
+        %tmp.5 = getm $.Toybox.Graphics;
+        %tmp.6 = getv %tmp.5 :COLOR_BLACK;
+        invoke %tmp.1 %tmp.2(%tmp.4, %tmp.6);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 70 8 ]
+        %tmp.7 = self;
+        %tmp.8 = getv function %tmp.7 :polar_to_cartesian;
+        %tmp.10 = lgetv %dc;
+        %tmp.11 = 0;
+        %tmp.12 = 0;
+        %tmp.13 = invoke %tmp.7 %tmp.8(%tmp.10, %tmp.11, %tmp.12);
+        %tmp.14 = as %tmp.13 Array<Number>;
+        lputv %pta %tmp.14;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 71 8 ]
+        %tmp.15 = lgetv %dc;
+        %tmp.16 = getv function %tmp.15 :drawCircle;
+        %tmp.18 = lgetv %pta;
+        %tmp.19 = 0;
+        %tmp.20 = agetv %tmp.18 %tmp.19;
+        %tmp.22 = lgetv %pta;
+        %tmp.23 = 1;
+        %tmp.24 = agetv %tmp.22 %tmp.23;
+        %tmp.25 = 2;
+        %tmp.27 = lgetv %radius_ele;
+        %tmp.28 = mul %tmp.25 %tmp.27;
+        invoke %tmp.15 %tmp.16(%tmp.20, %tmp.24, %tmp.28);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 73 8 ]
+        %tmp.29 = lgetv %dc;
+        %tmp.30 = getv function %tmp.29 :drawArc;
+        %tmp.32 = lgetv %pta;
+        %tmp.33 = 0;
+        %tmp.34 = agetv %tmp.32 %tmp.33;
+        %tmp.36 = lgetv %pta;
+        %tmp.37 = 1;
+        %tmp.38 = agetv %tmp.36 %tmp.37;
+        %tmp.39 = 3;
+        %tmp.41 = lgetv %radius_ele;
+        %tmp.42 = mul %tmp.39 %tmp.41;
+        %tmp.43 = getm $.Toybox.Graphics;
+        %tmp.44 = getv %tmp.43 :ARC_CLOCKWISE;
+        %tmp.45 = 225;
+        %tmp.46 = -45;
+        invoke %tmp.29 %tmp.30(%tmp.34, %tmp.38, %tmp.42, %tmp.44, %tmp.45, %tmp.46);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 74 8 ]
+        %tmp.47 = lgetv %dc;
+        %tmp.48 = getv function %tmp.47 :drawArc;
+        %tmp.50 = lgetv %pta;
+        %tmp.51 = 0;
+        %tmp.52 = agetv %tmp.50 %tmp.51;
+        %tmp.54 = lgetv %pta;
+        %tmp.55 = 1;
+        %tmp.56 = agetv %tmp.54 %tmp.55;
+        %tmp.57 = 4;
+        %tmp.59 = lgetv %radius_ele;
+        %tmp.60 = mul %tmp.57 %tmp.59;
+        %tmp.61 = getm $.Toybox.Graphics;
+        %tmp.62 = getv %tmp.61 :ARC_CLOCKWISE;
+        %tmp.63 = 225;
+        %tmp.64 = -45;
+        invoke %tmp.47 %tmp.48(%tmp.52, %tmp.56, %tmp.60, %tmp.62, %tmp.63, %tmp.64);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 75 8 ]
+        %tmp.65 = lgetv %dc;
+        %tmp.66 = getv function %tmp.65 :setPenWidth;
+        %tmp.67 = 2;
+        invoke %tmp.65 %tmp.66(%tmp.67);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 76 8 ]
+        %tmp.68 = lgetv %dc;
+        %tmp.69 = getv function %tmp.68 :drawArc;
+        %tmp.71 = lgetv %pta;
+        %tmp.72 = 0;
+        %tmp.73 = agetv %tmp.71 %tmp.72;
+        %tmp.75 = lgetv %pta;
+        %tmp.76 = 1;
+        %tmp.77 = agetv %tmp.75 %tmp.76;
+        %tmp.78 = 5;
+        %tmp.80 = lgetv %radius_ele;
+        %tmp.81 = mul %tmp.78 %tmp.80;
+        %tmp.82 = getm $.Toybox.Graphics;
+        %tmp.83 = getv %tmp.82 :ARC_CLOCKWISE;
+        %tmp.84 = 225;
+        %tmp.85 = -45;
+        invoke %tmp.68 %tmp.69(%tmp.73, %tmp.77, %tmp.81, %tmp.83, %tmp.84, %tmp.85);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 77 8 ]
+        %tmp.86 = lgetv %dc;
+        %tmp.87 = getv function %tmp.86 :setPenWidth;
+        %tmp.88 = 1;
+        invoke %tmp.86 %tmp.87(%tmp.88);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 79 8 ]
+        %tmp.89 = lgetv %dc;
+        %tmp.90 = getv function %tmp.89 :drawArc;
+        %tmp.92 = lgetv %pta;
+        %tmp.93 = 0;
+        %tmp.94 = agetv %tmp.92 %tmp.93;
+        %tmp.96 = lgetv %pta;
+        %tmp.97 = 1;
+        %tmp.98 = agetv %tmp.96 %tmp.97;
+        %tmp.99 = 6;
+        %tmp.101 = lgetv %radius_ele;
+        %tmp.102 = mul %tmp.99 %tmp.101;
+        %tmp.103 = getm $.Toybox.Graphics;
+        %tmp.104 = getv %tmp.103 :ARC_CLOCKWISE;
+        %tmp.105 = 225;
+        %tmp.106 = -45;
+        invoke %tmp.89 %tmp.90(%tmp.94, %tmp.98, %tmp.102, %tmp.104, %tmp.105, %tmp.106);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 80 8 ]
+        %tmp.107 = lgetv %dc;
+        %tmp.108 = getv function %tmp.107 :drawArc;
+        %tmp.110 = lgetv %pta;
+        %tmp.111 = 0;
+        %tmp.112 = agetv %tmp.110 %tmp.111;
+        %tmp.114 = lgetv %pta;
+        %tmp.115 = 1;
+        %tmp.116 = agetv %tmp.114 %tmp.115;
+        %tmp.117 = 7;
+        %tmp.119 = lgetv %radius_ele;
+        %tmp.120 = mul %tmp.117 %tmp.119;
+        %tmp.121 = getm $.Toybox.Graphics;
+        %tmp.122 = getv %tmp.121 :ARC_CLOCKWISE;
+        %tmp.123 = 225;
+        %tmp.124 = -45;
+        invoke %tmp.107 %tmp.108(%tmp.112, %tmp.116, %tmp.120, %tmp.122, %tmp.123, %tmp.124);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 81 8 ]
+        %tmp.125 = lgetv %dc;
+        %tmp.126 = getv function %tmp.125 :drawArc;
+        %tmp.128 = lgetv %pta;
+        %tmp.129 = 0;
+        %tmp.130 = agetv %tmp.128 %tmp.129;
+        %tmp.132 = lgetv %pta;
+        %tmp.133 = 1;
+        %tmp.134 = agetv %tmp.132 %tmp.133;
+        %tmp.135 = 8;
+        %tmp.137 = lgetv %radius_ele;
+        %tmp.138 = mul %tmp.135 %tmp.137;
+        %tmp.139 = getm $.Toybox.Graphics;
+        %tmp.140 = getv %tmp.139 :ARC_CLOCKWISE;
+        %tmp.141 = 225;
+        %tmp.142 = -45;
+        invoke %tmp.125 %tmp.126(%tmp.130, %tmp.134, %tmp.138, %tmp.140, %tmp.141, %tmp.142);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 83 8 ]
+        %tmp.143 = self;
+        %tmp.144 = getv function %tmp.143 :polar_to_cartesian;
+        %tmp.146 = lgetv %dc;
+        %tmp.147 = 2;
+        %tmp.149 = lgetv %radius_ele;
+        %tmp.150 = mul %tmp.147 %tmp.149;
+        %tmp.151 = 0;
+        %tmp.152 = invoke %tmp.143 %tmp.144(%tmp.146, %tmp.150, %tmp.151);
+        %tmp.153 = as %tmp.152 Array<Number>;
+        lputv %pta %tmp.153;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 84 8 ]
+        %tmp.154 = self;
+        %tmp.155 = getv function %tmp.154 :polar_to_cartesian;
+        %tmp.157 = lgetv %dc;
+        %tmp.159 = lgetv %r;
+        %tmp.160 = 0;
+        %tmp.161 = invoke %tmp.154 %tmp.155(%tmp.157, %tmp.159, %tmp.160);
+        %tmp.162 = as %tmp.161 Array<Number>;
+        lputv %ptb %tmp.162;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 85 8 ]
+        %tmp.163 = lgetv %dc;
+        %tmp.164 = getv function %tmp.163 :setPenWidth;
+        %tmp.165 = 2;
+        invoke %tmp.163 %tmp.164(%tmp.165);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 86 8 ]
+        %tmp.166 = lgetv %dc;
+        %tmp.167 = getv function %tmp.166 :drawLine;
+        %tmp.169 = lgetv %pta;
+        %tmp.170 = 0;
+        %tmp.171 = agetv %tmp.169 %tmp.170;
+        %tmp.173 = lgetv %pta;
+        %tmp.174 = 1;
+        %tmp.175 = agetv %tmp.173 %tmp.174;
+        %tmp.177 = lgetv %ptb;
+        %tmp.178 = 0;
+        %tmp.179 = agetv %tmp.177 %tmp.178;
+        %tmp.181 = lgetv %ptb;
+        %tmp.182 = 1;
+        %tmp.183 = agetv %tmp.181 %tmp.182;
+        invoke %tmp.166 %tmp.167(%tmp.171, %tmp.175, %tmp.179, %tmp.183);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 87 8 ]
+        %tmp.184 = lgetv %dc;
+        %tmp.185 = getv function %tmp.184 :setPenWidth;
+        %tmp.186 = 1;
+        invoke %tmp.184 %tmp.185(%tmp.186);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 89 8 ]
+        %tmp.187 = self;
+        %tmp.188 = getv function %tmp.187 :polar_to_cartesian;
+        %tmp.190 = lgetv %dc;
+        %tmp.191 = 2;
+        %tmp.193 = lgetv %radius_ele;
+        %tmp.194 = mul %tmp.191 %tmp.193;
+        %tmp.195 = 45;
+        %tmp.196 = invoke %tmp.187 %tmp.188(%tmp.190, %tmp.194, %tmp.195);
+        %tmp.197 = as %tmp.196 Array<Number>;
+        lputv %pta %tmp.197;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 90 8 ]
+        %tmp.198 = self;
+        %tmp.199 = getv function %tmp.198 :polar_to_cartesian;
+        %tmp.201 = lgetv %dc;
+        %tmp.203 = lgetv %r;
+        %tmp.204 = 45;
+        %tmp.205 = invoke %tmp.198 %tmp.199(%tmp.201, %tmp.203, %tmp.204);
+        %tmp.206 = as %tmp.205 Array<Number>;
+        lputv %ptb %tmp.206;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 91 8 ]
+        %tmp.207 = lgetv %dc;
+        %tmp.208 = getv function %tmp.207 :drawLine;
+        %tmp.210 = lgetv %pta;
+        %tmp.211 = 0;
+        %tmp.212 = agetv %tmp.210 %tmp.211;
+        %tmp.214 = lgetv %pta;
+        %tmp.215 = 1;
+        %tmp.216 = agetv %tmp.214 %tmp.215;
+        %tmp.218 = lgetv %ptb;
+        %tmp.219 = 0;
+        %tmp.220 = agetv %tmp.218 %tmp.219;
+        %tmp.222 = lgetv %ptb;
+        %tmp.223 = 1;
+        %tmp.224 = agetv %tmp.222 %tmp.223;
+        invoke %tmp.207 %tmp.208(%tmp.212, %tmp.216, %tmp.220, %tmp.224);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 93 8 ]
+        %tmp.225 = self;
+        %tmp.226 = getv function %tmp.225 :polar_to_cartesian;
+        %tmp.228 = lgetv %dc;
+        %tmp.229 = 2;
+        %tmp.231 = lgetv %radius_ele;
+        %tmp.232 = mul %tmp.229 %tmp.231;
+        %tmp.233 = 90;
+        %tmp.234 = invoke %tmp.225 %tmp.226(%tmp.228, %tmp.232, %tmp.233);
+        %tmp.235 = as %tmp.234 Array<Number>;
+        lputv %pta %tmp.235;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 94 8 ]
+        %tmp.236 = self;
+        %tmp.237 = getv function %tmp.236 :polar_to_cartesian;
+        %tmp.239 = lgetv %dc;
+        %tmp.241 = lgetv %r;
+        %tmp.242 = 90;
+        %tmp.243 = invoke %tmp.236 %tmp.237(%tmp.239, %tmp.241, %tmp.242);
+        %tmp.244 = as %tmp.243 Array<Number>;
+        lputv %ptb %tmp.244;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 95 8 ]
+        %tmp.245 = lgetv %dc;
+        %tmp.246 = getv function %tmp.245 :drawLine;
+        %tmp.248 = lgetv %pta;
+        %tmp.249 = 0;
+        %tmp.250 = agetv %tmp.248 %tmp.249;
+        %tmp.252 = lgetv %pta;
+        %tmp.253 = 1;
+        %tmp.254 = agetv %tmp.252 %tmp.253;
+        %tmp.256 = lgetv %ptb;
+        %tmp.257 = 0;
+        %tmp.258 = agetv %tmp.256 %tmp.257;
+        %tmp.260 = lgetv %ptb;
+        %tmp.261 = 1;
+        %tmp.262 = agetv %tmp.260 %tmp.261;
+        invoke %tmp.245 %tmp.246(%tmp.250, %tmp.254, %tmp.258, %tmp.262);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 97 8 ]
+        %tmp.263 = self;
+        %tmp.264 = getv function %tmp.263 :polar_to_cartesian;
+        %tmp.266 = lgetv %dc;
+        %tmp.267 = 2;
+        %tmp.269 = lgetv %radius_ele;
+        %tmp.270 = mul %tmp.267 %tmp.269;
+        %tmp.271 = 135;
+        %tmp.272 = invoke %tmp.263 %tmp.264(%tmp.266, %tmp.270, %tmp.271);
+        %tmp.273 = as %tmp.272 Array<Number>;
+        lputv %pta %tmp.273;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 98 8 ]
+        %tmp.274 = self;
+        %tmp.275 = getv function %tmp.274 :polar_to_cartesian;
+        %tmp.277 = lgetv %dc;
+        %tmp.279 = lgetv %r;
+        %tmp.280 = 135;
+        %tmp.281 = invoke %tmp.274 %tmp.275(%tmp.277, %tmp.279, %tmp.280);
+        %tmp.282 = as %tmp.281 Array<Number>;
+        lputv %ptb %tmp.282;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 99 8 ]
+        %tmp.283 = lgetv %dc;
+        %tmp.284 = getv function %tmp.283 :drawLine;
+        %tmp.286 = lgetv %pta;
+        %tmp.287 = 0;
+        %tmp.288 = agetv %tmp.286 %tmp.287;
+        %tmp.290 = lgetv %pta;
+        %tmp.291 = 1;
+        %tmp.292 = agetv %tmp.290 %tmp.291;
+        %tmp.294 = lgetv %ptb;
+        %tmp.295 = 0;
+        %tmp.296 = agetv %tmp.294 %tmp.295;
+        %tmp.298 = lgetv %ptb;
+        %tmp.299 = 1;
+        %tmp.300 = agetv %tmp.298 %tmp.299;
+        invoke %tmp.283 %tmp.284(%tmp.288, %tmp.292, %tmp.296, %tmp.300);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 101 8 ]
+        %tmp.301 = self;
+        %tmp.302 = getv function %tmp.301 :polar_to_cartesian;
+        %tmp.304 = lgetv %dc;
+        %tmp.305 = 2;
+        %tmp.307 = lgetv %radius_ele;
+        %tmp.308 = mul %tmp.305 %tmp.307;
+        %tmp.309 = -45;
+        %tmp.310 = invoke %tmp.301 %tmp.302(%tmp.304, %tmp.308, %tmp.309);
+        %tmp.311 = as %tmp.310 Array<Number>;
+        lputv %pta %tmp.311;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 102 8 ]
+        %tmp.312 = self;
+        %tmp.313 = getv function %tmp.312 :polar_to_cartesian;
+        %tmp.315 = lgetv %dc;
+        %tmp.317 = lgetv %r;
+        %tmp.318 = -45;
+        %tmp.319 = invoke %tmp.312 %tmp.313(%tmp.315, %tmp.317, %tmp.318);
+        %tmp.320 = as %tmp.319 Array<Number>;
+        lputv %ptb %tmp.320;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 103 8 ]
+        %tmp.321 = lgetv %dc;
+        %tmp.322 = getv function %tmp.321 :drawLine;
+        %tmp.324 = lgetv %pta;
+        %tmp.325 = 0;
+        %tmp.326 = agetv %tmp.324 %tmp.325;
+        %tmp.328 = lgetv %pta;
+        %tmp.329 = 1;
+        %tmp.330 = agetv %tmp.328 %tmp.329;
+        %tmp.332 = lgetv %ptb;
+        %tmp.333 = 0;
+        %tmp.334 = agetv %tmp.332 %tmp.333;
+        %tmp.336 = lgetv %ptb;
+        %tmp.337 = 1;
+        %tmp.338 = agetv %tmp.336 %tmp.337;
+        invoke %tmp.321 %tmp.322(%tmp.326, %tmp.330, %tmp.334, %tmp.338);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 105 8 ]
+        %tmp.339 = self;
+        %tmp.340 = getv function %tmp.339 :polar_to_cartesian;
+        %tmp.342 = lgetv %dc;
+        %tmp.343 = 2;
+        %tmp.345 = lgetv %radius_ele;
+        %tmp.346 = mul %tmp.343 %tmp.345;
+        %tmp.347 = -90;
+        %tmp.348 = invoke %tmp.339 %tmp.340(%tmp.342, %tmp.346, %tmp.347);
+        %tmp.349 = as %tmp.348 Array<Number>;
+        lputv %pta %tmp.349;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 106 8 ]
+        %tmp.350 = self;
+        %tmp.351 = getv function %tmp.350 :polar_to_cartesian;
+        %tmp.353 = lgetv %dc;
+        %tmp.355 = lgetv %r;
+        %tmp.356 = -90;
+        %tmp.357 = invoke %tmp.350 %tmp.351(%tmp.353, %tmp.355, %tmp.356);
+        %tmp.358 = as %tmp.357 Array<Number>;
+        lputv %ptb %tmp.358;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 107 8 ]
+        %tmp.359 = lgetv %dc;
+        %tmp.360 = getv function %tmp.359 :drawLine;
+        %tmp.362 = lgetv %pta;
+        %tmp.363 = 0;
+        %tmp.364 = agetv %tmp.362 %tmp.363;
+        %tmp.366 = lgetv %pta;
+        %tmp.367 = 1;
+        %tmp.368 = agetv %tmp.366 %tmp.367;
+        %tmp.370 = lgetv %ptb;
+        %tmp.371 = 0;
+        %tmp.372 = agetv %tmp.370 %tmp.371;
+        %tmp.374 = lgetv %ptb;
+        %tmp.375 = 1;
+        %tmp.376 = agetv %tmp.374 %tmp.375;
+        invoke %tmp.359 %tmp.360(%tmp.364, %tmp.368, %tmp.372, %tmp.376);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 109 8 ]
+        %tmp.377 = self;
+        %tmp.378 = getv function %tmp.377 :polar_to_cartesian;
+        %tmp.380 = lgetv %dc;
+        %tmp.381 = 2;
+        %tmp.383 = lgetv %radius_ele;
+        %tmp.384 = mul %tmp.381 %tmp.383;
+        %tmp.385 = -135;
+        %tmp.386 = invoke %tmp.377 %tmp.378(%tmp.380, %tmp.384, %tmp.385);
+        %tmp.387 = as %tmp.386 Array<Number>;
+        lputv %pta %tmp.387;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 110 8 ]
+        %tmp.388 = self;
+        %tmp.389 = getv function %tmp.388 :polar_to_cartesian;
+        %tmp.391 = lgetv %dc;
+        %tmp.393 = lgetv %r;
+        %tmp.394 = -135;
+        %tmp.395 = invoke %tmp.388 %tmp.389(%tmp.391, %tmp.393, %tmp.394);
+        %tmp.396 = as %tmp.395 Array<Number>;
+        lputv %ptb %tmp.396;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 111 8 ]
+        %tmp.397 = lgetv %dc;
+        %tmp.398 = getv function %tmp.397 :drawLine;
+        %tmp.400 = lgetv %pta;
+        %tmp.401 = 0;
+        %tmp.402 = agetv %tmp.400 %tmp.401;
+        %tmp.404 = lgetv %pta;
+        %tmp.405 = 1;
+        %tmp.406 = agetv %tmp.404 %tmp.405;
+        %tmp.408 = lgetv %ptb;
+        %tmp.409 = 0;
+        %tmp.410 = agetv %tmp.408 %tmp.409;
+        %tmp.412 = lgetv %ptb;
+        %tmp.413 = 1;
+        %tmp.414 = agetv %tmp.412 %tmp.413;
+        invoke %tmp.397 %tmp.398(%tmp.402, %tmp.406, %tmp.410, %tmp.414);
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_67_66_stop:
+    }
+    [ @file = "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc"; @line = 114; ]
+    private
+    function draw_status(dc as Dc, radius_ele) {
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_114_55_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 115 8 ]
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_115_8_if_stmt:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_115_12_begin:
+        %tmp.1 = getm $;
+        %tmp.2 = getv %tmp.1 :zscore_hrv;
+        %tmp.3 = getv function %tmp.2 :size;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        %tmp.5 = 0;
+        %tmp.6 = eq %tmp.4 %tmp.5;
+        %tmp.7 = dup %tmp.6;
+        bt %tmp.7 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_115_40_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_115_40_false:
+        %tmp.8 = getm $;
+        %tmp.9 = getv %tmp.8 :zscore_hrv;
+        %tmp.10 = getv function %tmp.9 :size;
+        %tmp.11 = invoke %tmp.9 %tmp.10();
+        %tmp.12 = 0;
+        %tmp.13 = eq %tmp.11 %tmp.12;
+        %tmp.14 = or %tmp.6 %tmp.13;
+        push %tmp.14;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_115_40_end:
+        %tmp.15 = phi [%tmp.7 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_115_12_begin] [%tmp.14 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_115_40_false] [%tmp.15 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_115_40_end];
+        bf %tmp.15 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_115_8_if_false;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_115_8_if_true:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_115_66_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 116 12 ]
+        [ "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_115_66_start" "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_115_66_stop" ]
+        %pt.1 = local;
+        %tmp.16 = self;
+        %tmp.17 = getv function %tmp.16 :polar_to_cartesian;
+        %tmp.19 = lgetv %dc;
+        %tmp.20 = 0;
+        %tmp.21 = 0;
+        %tmp.22 = invoke %tmp.16 %tmp.17(%tmp.19, %tmp.20, %tmp.21);
+        %tmp.23 = as %tmp.22 Array<Number>;
+        lputv %pt.1 %tmp.23;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 117 12 ]
+        %tmp.24 = lgetv %dc;
+        %tmp.25 = getv function %tmp.24 :setColor;
+        %tmp.26 = getm $.Toybox.Graphics;
+        %tmp.27 = getv %tmp.26 :COLOR_LT_GRAY;
+        %tmp.28 = getm $.Toybox.Graphics;
+        %tmp.29 = getv %tmp.28 :COLOR_TRANSPARENT;
+        invoke %tmp.24 %tmp.25(%tmp.27, %tmp.29);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 118 12 ]
+        %tmp.30 = lgetv %dc;
+        %tmp.31 = getv function %tmp.30 :fillCircle;
+        %tmp.33 = lgetv %pt.1;
+        %tmp.34 = 0;
+        %tmp.35 = agetv %tmp.33 %tmp.34;
+        %tmp.37 = lgetv %pt.1;
+        %tmp.38 = 1;
+        %tmp.39 = agetv %tmp.37 %tmp.38;
+        %tmp.40 = 1.75;
+        %tmp.42 = lgetv %radius_ele;
+        %tmp.43 = mul %tmp.40 %tmp.42;
+        invoke %tmp.30 %tmp.31(%tmp.35, %tmp.39, %tmp.43);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 119 12 ]
+        %tmp.44 = lgetv %dc;
+        %tmp.45 = getv function %tmp.44 :setColor;
+        %tmp.46 = getm $.Toybox.Graphics;
+        %tmp.47 = getv %tmp.46 :COLOR_WHITE;
+        %tmp.48 = getm $.Toybox.Graphics;
+        %tmp.49 = getv %tmp.48 :COLOR_TRANSPARENT;
+        invoke %tmp.44 %tmp.45(%tmp.47, %tmp.49);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 120 12 ]
+        %tmp.50 = self;
+        %tmp.51 = getv function %tmp.50 :polar_to_cartesian;
+        %tmp.53 = lgetv %dc;
+        %tmp.54 = 0;
+        %tmp.55 = 0;
+        %tmp.56 = invoke %tmp.50 %tmp.51(%tmp.53, %tmp.54, %tmp.55);
+        %tmp.57 = as %tmp.56 Array<Number>;
+        lputv %pt.1 %tmp.57;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 121 12 ]
+        %tmp.58 = lgetv %dc;
+        %tmp.59 = getv function %tmp.58 :drawText;
+        %tmp.61 = lgetv %pt.1;
+        %tmp.62 = 0;
+        %tmp.63 = agetv %tmp.61 %tmp.62;
+        %tmp.65 = lgetv %pt.1;
+        %tmp.66 = 1;
+        %tmp.67 = agetv %tmp.65 %tmp.66;
+        %tmp.68 = getm $.Toybox.Graphics;
+        %tmp.69 = getv %tmp.68 :FONT_XTINY;
+        %tmp.70 = getm $;
+        %tmp.71 = getv %tmp.70 :request_failed;
+        %tmp.72 = getv function %tmp.71 :toString;
+        %tmp.73 = invoke %tmp.71 %tmp.72();
+        %tmp.74 = getm $.Toybox.Graphics;
+        %tmp.75 = getv %tmp.74 :TEXT_JUSTIFY_VCENTER;
+        %tmp.76 = getm $.Toybox.Graphics;
+        %tmp.77 = getv %tmp.76 :TEXT_JUSTIFY_CENTER;
+        %tmp.78 = add %tmp.75 %tmp.77;
+        invoke %tmp.58 %tmp.59(%tmp.63, %tmp.67, %tmp.69, %tmp.73, %tmp.78);
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_115_66_stop:
+        goto @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_115_8_if_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_115_8_if_false:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_123_12_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 124 12 ]
+        [ "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_123_12_start" "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_123_12_stop" ]
+        %hrv.2 = local;
+        %tmp.79 = getm $;
+        %tmp.80 = getv %tmp.79 :zscore_hrv;
+        %tmp.81 = as %tmp.80 Array<Float>;
+        %tmp.82 = 0;
+        %tmp.83 = agetv %tmp.81 %tmp.82;
+        lputv %hrv.2 %tmp.83;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 125 12 ]
+        [ "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_123_12_start" "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_123_12_stop" ]
+        %rhr.3 = local;
+        %tmp.84 = getm $;
+        %tmp.85 = getv %tmp.84 :zscore_rhr;
+        %tmp.86 = as %tmp.85 Array<Float>;
+        %tmp.87 = 0;
+        %tmp.88 = agetv %tmp.86 %tmp.87;
+        lputv %rhr.3 %tmp.88;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 127 12 ]
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_127_12_if_stmt:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_127_16_begin:
+        %tmp.90 = lgetv %hrv.2;
+        %tmp.91 = null;
+        %tmp.92 = eq %tmp.90 %tmp.91;
+        %tmp.93 = dup %tmp.92;
+        bt %tmp.93 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_127_31_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_127_31_false:
+        %tmp.95 = lgetv %rhr.3;
+        %tmp.96 = null;
+        %tmp.97 = eq %tmp.95 %tmp.96;
+        %tmp.98 = or %tmp.92 %tmp.97;
+        push %tmp.98;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_127_31_end:
+        %tmp.99 = phi [%tmp.93 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_127_16_begin] [%tmp.98 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_127_31_false] [%tmp.99 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_127_31_end];
+        bf %tmp.99 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_127_12_if_false;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_127_12_if_true:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_127_44_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 128 16 ]
+        [ "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_127_44_start" "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_127_44_stop" ]
+        %pt.4 = local;
+        %tmp.100 = self;
+        %tmp.101 = getv function %tmp.100 :polar_to_cartesian;
+        %tmp.103 = lgetv %dc;
+        %tmp.104 = 0;
+        %tmp.105 = 0;
+        %tmp.106 = invoke %tmp.100 %tmp.101(%tmp.103, %tmp.104, %tmp.105);
+        %tmp.107 = as %tmp.106 Array<Number>;
+        lputv %pt.4 %tmp.107;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 129 16 ]
+        %tmp.108 = lgetv %dc;
+        %tmp.109 = getv function %tmp.108 :setColor;
+        %tmp.110 = getm $.Toybox.Graphics;
+        %tmp.111 = getv %tmp.110 :COLOR_LT_GRAY;
+        %tmp.112 = getm $.Toybox.Graphics;
+        %tmp.113 = getv %tmp.112 :COLOR_TRANSPARENT;
+        invoke %tmp.108 %tmp.109(%tmp.111, %tmp.113);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 130 16 ]
+        %tmp.114 = lgetv %dc;
+        %tmp.115 = getv function %tmp.114 :fillCircle;
+        %tmp.117 = lgetv %pt.4;
+        %tmp.118 = 0;
+        %tmp.119 = agetv %tmp.117 %tmp.118;
+        %tmp.121 = lgetv %pt.4;
+        %tmp.122 = 1;
+        %tmp.123 = agetv %tmp.121 %tmp.122;
+        %tmp.124 = 1.75;
+        %tmp.126 = lgetv %radius_ele;
+        %tmp.127 = mul %tmp.124 %tmp.126;
+        invoke %tmp.114 %tmp.115(%tmp.119, %tmp.123, %tmp.127);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 131 16 ]
+        %tmp.128 = lgetv %dc;
+        %tmp.129 = getv function %tmp.128 :setColor;
+        %tmp.130 = getm $.Toybox.Graphics;
+        %tmp.131 = getv %tmp.130 :COLOR_WHITE;
+        %tmp.132 = getm $.Toybox.Graphics;
+        %tmp.133 = getv %tmp.132 :COLOR_TRANSPARENT;
+        invoke %tmp.128 %tmp.129(%tmp.131, %tmp.133);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 132 16 ]
+        %tmp.134 = self;
+        %tmp.135 = getv function %tmp.134 :polar_to_cartesian;
+        %tmp.137 = lgetv %dc;
+        %tmp.138 = 0;
+        %tmp.139 = 0;
+        %tmp.140 = invoke %tmp.134 %tmp.135(%tmp.137, %tmp.138, %tmp.139);
+        %tmp.141 = as %tmp.140 Array<Number>;
+        lputv %pt.4 %tmp.141;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 133 16 ]
+        %tmp.142 = lgetv %dc;
+        %tmp.143 = getv function %tmp.142 :drawText;
+        %tmp.145 = lgetv %pt.4;
+        %tmp.146 = 0;
+        %tmp.147 = agetv %tmp.145 %tmp.146;
+        %tmp.149 = lgetv %pt.4;
+        %tmp.150 = 1;
+        %tmp.151 = agetv %tmp.149 %tmp.150;
+        %tmp.152 = getm $.Toybox.Graphics;
+        %tmp.153 = getv %tmp.152 :FONT_XTINY;
+        %tmp.154 = "No\ndata";
+        %tmp.155 = getm $.Toybox.Graphics;
+        %tmp.156 = getv %tmp.155 :TEXT_JUSTIFY_VCENTER;
+        %tmp.157 = getm $.Toybox.Graphics;
+        %tmp.158 = getv %tmp.157 :TEXT_JUSTIFY_CENTER;
+        %tmp.159 = add %tmp.156 %tmp.158;
+        invoke %tmp.142 %tmp.143(%tmp.147, %tmp.151, %tmp.153, %tmp.154, %tmp.159);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 134 16 ]
+        %tmp.160 = self;
+        %tmp.161 = getv function %tmp.160 :polar_to_cartesian;
+        %tmp.163 = lgetv %dc;
+        %tmp.164 = 3;
+        %tmp.166 = lgetv %radius_ele;
+        %tmp.167 = mul %tmp.164 %tmp.166;
+        %tmp.168 = 180;
+        %tmp.169 = invoke %tmp.160 %tmp.161(%tmp.163, %tmp.167, %tmp.168);
+        %tmp.170 = as %tmp.169 Array<Number>;
+        lputv %pt.4 %tmp.170;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 135 16 ]
+        %tmp.171 = lgetv %dc;
+        %tmp.172 = getv function %tmp.171 :drawText;
+        %tmp.174 = lgetv %pt.4;
+        %tmp.175 = 0;
+        %tmp.176 = agetv %tmp.174 %tmp.175;
+        %tmp.178 = lgetv %pt.4;
+        %tmp.179 = 1;
+        %tmp.180 = agetv %tmp.178 %tmp.179;
+        %tmp.181 = getm $.Toybox.Graphics;
+        %tmp.182 = getv %tmp.181 :FONT_XTINY;
+        %tmp.183 = "Invalid!\nNo data for today.";
+        %tmp.184 = getm $.Toybox.Graphics;
+        %tmp.185 = getv %tmp.184 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.171 %tmp.172(%tmp.176, %tmp.180, %tmp.182, %tmp.183, %tmp.185);
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_127_44_stop:
+        goto @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_127_12_if_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_127_12_if_false:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_137_16_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 138 16 ]
+        [ "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_137_16_start" "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_137_16_stop" ]
+        %text.5 = local;
+        %tmp.186 = "In\nvalid";
+        lputv %text.5 %tmp.186;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 139 16 ]
+        [ "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_137_16_start" "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_137_16_stop" ]
+        %detail.6 = local;
+        %tmp.187 = "No data!\nSync with Garmin.";
+        lputv %detail.6 %tmp.187;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 140 16 ]
+        [ "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_137_16_start" "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_137_16_stop" ]
+        %color.7 = local;
+        %tmp.188 = getm $.Toybox.Graphics;
+        %tmp.189 = getv %tmp.188 :COLOR_LT_GRAY;
+        lputv %color.7 %tmp.189;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 142 16 ]
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_142_16_if_stmt:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_142_20_begin:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_142_20_begin:
+        %tmp.190 = -1;
+        %tmp.192 = lgetv %rhr.3;
+        %tmp.193 = as %tmp.192 { (!Null) };
+        %tmp.194 = lt %tmp.190 %tmp.193;
+        %tmp.195 = dup %tmp.194;
+        bf %tmp.195 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_142_35_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_142_35_true:
+        %tmp.197 = lgetv %rhr.3;
+        %tmp.198 = as %tmp.197 { (!Null) };
+        %tmp.199 = 1;
+        %tmp.200 = lte %tmp.198 %tmp.199;
+        %tmp.201 = and %tmp.194 %tmp.200;
+        push %tmp.201;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_142_35_end:
+        %tmp.202 = phi [%tmp.195 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_142_20_begin] [%tmp.201 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_142_35_true] [%tmp.202 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_142_35_end];
+        %tmp.203 = dup %tmp.202;
+        bf %tmp.203 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_142_50_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_142_50_true:
+        %tmp.205 = lgetv %hrv.2;
+        %tmp.206 = as %tmp.205 { (!Null) };
+        %tmp.207 = 1;
+        %tmp.208 = gt %tmp.206 %tmp.207;
+        %tmp.209 = and %tmp.202 %tmp.208;
+        push %tmp.209;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_142_50_end:
+        %tmp.210 = phi [%tmp.203 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_142_20_begin] [%tmp.209 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_142_50_true] [%tmp.210 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_142_50_end];
+        bf %tmp.210 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_142_16_if_false;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_142_16_if_true:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_142_61_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 143 20 ]
+        %tmp.211 = "HIT";
+        lputv %text.5 %tmp.211;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 144 20 ]
+        %tmp.212 = "Ready for\nIntensive Training";
+        lputv %detail.6 %tmp.212;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 145 20 ]
+        %tmp.213 = getm $.Toybox.Graphics;
+        %tmp.214 = getv %tmp.213 :COLOR_DK_GREEN;
+        lputv %color.7 %tmp.214;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_142_61_stop:
+        goto @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_142_16_if_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_142_16_if_false:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 147 21 ]
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_147_21_if_stmt:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_147_25_begin:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_147_25_begin:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_147_25_begin:
+        %tmp.215 = -2;
+        %tmp.217 = lgetv %rhr.3;
+        %tmp.218 = as %tmp.217 { (!Null) };
+        %tmp.219 = lte %tmp.215 %tmp.218;
+        %tmp.220 = dup %tmp.219;
+        bf %tmp.220 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_147_41_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_147_41_true:
+        %tmp.222 = lgetv %rhr.3;
+        %tmp.223 = as %tmp.222 { (!Null) };
+        %tmp.224 = -1;
+        %tmp.225 = lte %tmp.223 %tmp.224;
+        %tmp.226 = and %tmp.219 %tmp.225;
+        push %tmp.226;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_147_41_end:
+        %tmp.227 = phi [%tmp.220 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_147_25_begin] [%tmp.226 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_147_41_true] [%tmp.227 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_147_41_end];
+        %tmp.228 = dup %tmp.227;
+        bf %tmp.228 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_147_57_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_147_57_true:
+        %tmp.229 = -1;
+        %tmp.231 = lgetv %hrv.2;
+        %tmp.232 = as %tmp.231 { (!Null) };
+        %tmp.233 = lte %tmp.229 %tmp.232;
+        %tmp.234 = and %tmp.227 %tmp.233;
+        push %tmp.234;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_147_57_end:
+        %tmp.235 = phi [%tmp.228 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_147_25_begin] [%tmp.234 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_147_57_true] [%tmp.235 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_147_57_end];
+        %tmp.236 = dup %tmp.235;
+        bf %tmp.236 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_147_73_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_147_73_true:
+        %tmp.238 = lgetv %hrv.2;
+        %tmp.239 = as %tmp.238 { (!Null) };
+        %tmp.240 = 0;
+        %tmp.241 = lt %tmp.239 %tmp.240;
+        %tmp.242 = and %tmp.235 %tmp.241;
+        push %tmp.242;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_147_73_end:
+        %tmp.243 = phi [%tmp.236 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_147_25_begin] [%tmp.242 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_147_73_true] [%tmp.243 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_147_73_end];
+        bf %tmp.243 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_147_21_if_false;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_147_21_if_true:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_147_84_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 148 20 ]
+        %tmp.244 = "LIT";
+        lputv %text.5 %tmp.244;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 149 20 ]
+        %tmp.245 = "Low\nintensity training";
+        lputv %detail.6 %tmp.245;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 150 20 ]
+        %tmp.246 = getm $.Toybox.Graphics;
+        %tmp.247 = getv %tmp.246 :COLOR_ORANGE;
+        lputv %color.7 %tmp.247;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_147_84_stop:
+        goto @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_147_21_if_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_147_21_if_false:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 152 21 ]
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_152_21_if_stmt:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_152_25_begin:
+        %tmp.249 = lgetv %rhr.3;
+        %tmp.250 = as %tmp.249 { (!Null) };
+        %tmp.251 = -2;
+        %tmp.252 = lte %tmp.250 %tmp.251;
+        %tmp.253 = dup %tmp.252;
+        bf %tmp.253 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_152_41_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_152_41_true:
+        %tmp.255 = lgetv %hrv.2;
+        %tmp.256 = as %tmp.255 { (!Null) };
+        %tmp.257 = 0;
+        %tmp.258 = gte %tmp.256 %tmp.257;
+        %tmp.259 = and %tmp.252 %tmp.258;
+        push %tmp.259;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_152_41_end:
+        %tmp.260 = phi [%tmp.253 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_152_25_begin] [%tmp.259 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_152_41_true] [%tmp.260 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_152_41_end];
+        bf %tmp.260 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_152_21_if_false;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_152_21_if_true:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_152_53_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 153 20 ]
+        %tmp.261 = "LIT!";
+        lputv %text.5 %tmp.261;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 154 20 ]
+        %tmp.262 = "Keep calm\nAcute fatigue signs";
+        lputv %detail.6 %tmp.262;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 155 20 ]
+        %tmp.263 = getm $.Toybox.Graphics;
+        %tmp.264 = getv %tmp.263 :COLOR_ORANGE;
+        lputv %color.7 %tmp.264;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_152_53_stop:
+        goto @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_152_21_if_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_152_21_if_false:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 157 21 ]
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_157_21_if_stmt:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_157_25_begin:
+        %tmp.266 = lgetv %rhr.3;
+        %tmp.267 = as %tmp.266 { (!Null) };
+        %tmp.268 = 1.7;
+        %tmp.269 = lt %tmp.267 %tmp.268;
+        %tmp.270 = dup %tmp.269;
+        bf %tmp.270 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_157_41_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_157_41_true:
+        %tmp.272 = lgetv %hrv.2;
+        %tmp.273 = as %tmp.272 { (!Null) };
+        %tmp.274 = -1;
+        %tmp.275 = gte %tmp.273 %tmp.274;
+        %tmp.276 = and %tmp.269 %tmp.275;
+        push %tmp.276;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_157_41_end:
+        %tmp.277 = phi [%tmp.270 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_157_25_begin] [%tmp.276 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_157_41_true] [%tmp.277 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_157_41_end];
+        bf %tmp.277 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_157_21_if_false;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_157_21_if_true:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_157_54_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 158 20 ]
+        %tmp.278 = "Norm";
+        lputv %text.5 %tmp.278;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 159 20 ]
+        %tmp.279 = "Go on!\nTrain as planned.";
+        lputv %detail.6 %tmp.279;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 160 20 ]
+        %tmp.280 = getm $.Toybox.Graphics;
+        %tmp.281 = getv %tmp.280 :COLOR_GREEN;
+        lputv %color.7 %tmp.281;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_157_54_stop:
+        goto @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_157_21_if_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_157_21_if_false:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 162 21 ]
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_162_21_if_stmt:
+        %tmp.283 = lgetv %hrv.2;
+        %tmp.284 = as %tmp.283 { (!Null) };
+        %tmp.285 = -1;
+        %tmp.286 = gte %tmp.284 %tmp.285;
+        bf %tmp.286 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_162_21_if_false;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_162_21_if_true:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_162_36_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 163 20 ]
+        %tmp.287 = "LIT";
+        lputv %text.5 %tmp.287;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 164 20 ]
+        %tmp.288 = "Low\nintensity training";
+        lputv %detail.6 %tmp.288;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 165 20 ]
+        %tmp.289 = getm $.Toybox.Graphics;
+        %tmp.290 = getv %tmp.289 :COLOR_ORANGE;
+        lputv %color.7 %tmp.290;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_162_36_stop:
+        goto @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_162_21_if_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_162_21_if_false:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 167 21 ]
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_167_21_if_stmt:
+        %tmp.292 = lgetv %rhr.3;
+        %tmp.293 = as %tmp.292 { (!Null) };
+        %tmp.294 = -2;
+        %tmp.295 = lte %tmp.293 %tmp.294;
+        bf %tmp.295 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_167_21_if_false;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_167_21_if_true:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_167_36_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 168 20 ]
+        %tmp.296 = "Rest";
+        lputv %text.5 %tmp.296;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 169 20 ]
+        %tmp.297 = "Recover\nAvoid overtraining";
+        lputv %detail.6 %tmp.297;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 170 20 ]
+        %tmp.298 = getm $.Toybox.Graphics;
+        %tmp.299 = getv %tmp.298 :COLOR_RED;
+        lputv %color.7 %tmp.299;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_167_36_stop:
+        goto @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_167_21_if_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_167_21_if_false:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 172 21 ]
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_172_21_if_stmt:
+        %tmp.301 = lgetv %rhr.3;
+        %tmp.302 = as %tmp.301 { (!Null) };
+        %tmp.303 = 1.7;
+        %tmp.304 = lte %tmp.302 %tmp.303;
+        bf %tmp.304 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_172_21_if_false;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_172_21_if_true:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_172_37_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 173 20 ]
+        %tmp.305 = "LIT";
+        lputv %text.5 %tmp.305;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 174 20 ]
+        %tmp.306 = "Low intensity\nRecovery not complete";
+        lputv %detail.6 %tmp.306;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 175 20 ]
+        %tmp.307 = getm $.Toybox.Graphics;
+        %tmp.308 = getv %tmp.307 :COLOR_ORANGE;
+        lputv %color.7 %tmp.308;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_172_37_stop:
+        goto @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_172_21_if_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_172_21_if_false:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_177_21_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 178 20 ]
+        %tmp.309 = "REST!";
+        lputv %text.5 %tmp.309;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 179 20 ]
+        %tmp.310 = "Be careful\nIllness/stress detected";
+        lputv %detail.6 %tmp.310;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 180 20 ]
+        %tmp.311 = getm $.Toybox.Graphics;
+        %tmp.312 = getv %tmp.311 :COLOR_DK_RED;
+        lputv %color.7 %tmp.312;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_177_21_stop:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_172_21_if_end:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_167_21_if_end:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_162_21_if_end:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_157_21_if_end:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_152_21_if_end:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_147_21_if_end:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_142_16_if_end:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 182 16 ]
+        [ "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_137_16_start" "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_137_16_stop" ]
+        %pt.8 = local;
+        %tmp.313 = self;
+        %tmp.314 = getv function %tmp.313 :polar_to_cartesian;
+        %tmp.316 = lgetv %dc;
+        %tmp.317 = 0;
+        %tmp.318 = 0;
+        %tmp.319 = invoke %tmp.313 %tmp.314(%tmp.316, %tmp.317, %tmp.318);
+        %tmp.320 = as %tmp.319 Array<Number>;
+        lputv %pt.8 %tmp.320;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 183 16 ]
+        %tmp.321 = lgetv %dc;
+        %tmp.322 = getv function %tmp.321 :setColor;
+        %tmp.324 = lgetv %color.7;
+        %tmp.325 = getm $.Toybox.Graphics;
+        %tmp.326 = getv %tmp.325 :COLOR_TRANSPARENT;
+        invoke %tmp.321 %tmp.322(%tmp.324, %tmp.326);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 184 16 ]
+        %tmp.327 = lgetv %dc;
+        %tmp.328 = getv function %tmp.327 :fillCircle;
+        %tmp.330 = lgetv %pt.8;
+        %tmp.331 = 0;
+        %tmp.332 = agetv %tmp.330 %tmp.331;
+        %tmp.334 = lgetv %pt.8;
+        %tmp.335 = 1;
+        %tmp.336 = agetv %tmp.334 %tmp.335;
+        %tmp.337 = 1.75;
+        %tmp.339 = lgetv %radius_ele;
+        %tmp.340 = mul %tmp.337 %tmp.339;
+        invoke %tmp.327 %tmp.328(%tmp.332, %tmp.336, %tmp.340);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 185 16 ]
+        %tmp.341 = lgetv %dc;
+        %tmp.342 = getv function %tmp.341 :setColor;
+        %tmp.343 = getm $.Toybox.Graphics;
+        %tmp.344 = getv %tmp.343 :COLOR_WHITE;
+        %tmp.345 = getm $.Toybox.Graphics;
+        %tmp.346 = getv %tmp.345 :COLOR_TRANSPARENT;
+        invoke %tmp.341 %tmp.342(%tmp.344, %tmp.346);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 186 16 ]
+        %tmp.347 = self;
+        %tmp.348 = getv function %tmp.347 :polar_to_cartesian;
+        %tmp.350 = lgetv %dc;
+        %tmp.351 = 0;
+        %tmp.352 = 0;
+        %tmp.353 = invoke %tmp.347 %tmp.348(%tmp.350, %tmp.351, %tmp.352);
+        %tmp.354 = as %tmp.353 Array<Number>;
+        lputv %pt.8 %tmp.354;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 187 16 ]
+        %tmp.355 = lgetv %dc;
+        %tmp.356 = getv function %tmp.355 :drawText;
+        %tmp.358 = lgetv %pt.8;
+        %tmp.359 = 0;
+        %tmp.360 = agetv %tmp.358 %tmp.359;
+        %tmp.362 = lgetv %pt.8;
+        %tmp.363 = 1;
+        %tmp.364 = agetv %tmp.362 %tmp.363;
+        %tmp.365 = getm $.Toybox.Graphics;
+        %tmp.366 = getv %tmp.365 :FONT_XTINY;
+        %tmp.368 = lgetv %text.5;
+        %tmp.369 = getm $.Toybox.Graphics;
+        %tmp.370 = getv %tmp.369 :TEXT_JUSTIFY_VCENTER;
+        %tmp.371 = getm $.Toybox.Graphics;
+        %tmp.372 = getv %tmp.371 :TEXT_JUSTIFY_CENTER;
+        %tmp.373 = add %tmp.370 %tmp.372;
+        invoke %tmp.355 %tmp.356(%tmp.360, %tmp.364, %tmp.366, %tmp.368, %tmp.373);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 188 16 ]
+        %tmp.374 = self;
+        %tmp.375 = getv function %tmp.374 :polar_to_cartesian;
+        %tmp.377 = lgetv %dc;
+        %tmp.378 = 3;
+        %tmp.380 = lgetv %radius_ele;
+        %tmp.381 = mul %tmp.378 %tmp.380;
+        %tmp.382 = 180;
+        %tmp.383 = invoke %tmp.374 %tmp.375(%tmp.377, %tmp.381, %tmp.382);
+        %tmp.384 = as %tmp.383 Array<Number>;
+        lputv %pt.8 %tmp.384;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 189 16 ]
+        %tmp.385 = lgetv %dc;
+        %tmp.386 = getv function %tmp.385 :drawText;
+        %tmp.388 = lgetv %pt.8;
+        %tmp.389 = 0;
+        %tmp.390 = agetv %tmp.388 %tmp.389;
+        %tmp.392 = lgetv %pt.8;
+        %tmp.393 = 1;
+        %tmp.394 = agetv %tmp.392 %tmp.393;
+        %tmp.395 = getm $.Toybox.Graphics;
+        %tmp.396 = getv %tmp.395 :FONT_XTINY;
+        %tmp.398 = lgetv %detail.6;
+        %tmp.399 = getm $.Toybox.Graphics;
+        %tmp.400 = getv %tmp.399 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.385 %tmp.386(%tmp.390, %tmp.394, %tmp.396, %tmp.398, %tmp.400);
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_137_16_stop:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_127_12_if_end:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_123_12_stop:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_115_8_if_end:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_114_55_stop:
+    }
+    [ @file = "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc"; @line = 194; ]
+    private
+    function scale_radius(radius as Float, r, radius_ele) {
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_194_65_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 195 8 ]
+        %tmp.2 = lgetv %radius;
+        %tmp.3 = 3;
+        %tmp.4 = div %tmp.2 %tmp.3;
+        %tmp.5 = 3;
+        %tmp.7 = lgetv %radius_ele;
+        %tmp.8 = mul %tmp.5 %tmp.7;
+        %tmp.9 = mul %tmp.4 %tmp.8;
+        lputv %radius %tmp.9;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 196 8 ]
+        %tmp.10 = lgetv %radius;
+        %tmp.11 = -1;
+        %tmp.12 = mul %tmp.10 %tmp.11;
+        lputv %radius %tmp.12;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 197 8 ]
+        %tmp.13 = 5;
+        %tmp.15 = lgetv %radius_ele;
+        %tmp.16 = mul %tmp.13 %tmp.15;
+        %tmp.18 = lgetv %radius;
+        %tmp.19 = add %tmp.16 %tmp.18;
+        lputv %radius %tmp.19;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 199 8 ]
+        %tmp.21 = lgetv %radius;
+        ret %tmp.21;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_194_65_stop:
+    }
+    [ @file = "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc"; @line = 202; ]
+    private
+    function scale_angle(angle as Float) {
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_202_48_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 203 8 ]
+        %tmp.2 = lgetv %angle;
+        %tmp.3 = 3;
+        %tmp.4 = div %tmp.2 %tmp.3;
+        %tmp.5 = 135;
+        %tmp.6 = mul %tmp.4 %tmp.5;
+        lputv %angle %tmp.6;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 205 8 ]
+        %tmp.8 = lgetv %angle;
+        ret %tmp.8;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_202_48_stop:
+    }
+    [ @file = "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc"; @line = 209; ]
+    private
+    function draw_points(dc as Dc, r, radius_ele) {
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_209_58_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 210 8 ]
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_210_8_if_stmt:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_210_12_begin:
+        %tmp.1 = getm $;
+        %tmp.2 = getv %tmp.1 :zscore_hrv;
+        %tmp.3 = getv function %tmp.2 :size;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        %tmp.5 = 0;
+        %tmp.6 = ne %tmp.4 %tmp.5;
+        %tmp.7 = dup %tmp.6;
+        bt %tmp.7 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_210_40_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_210_40_false:
+        %tmp.8 = getm $;
+        %tmp.9 = getv %tmp.8 :zscore_hrv;
+        %tmp.10 = getv function %tmp.9 :size;
+        %tmp.11 = invoke %tmp.9 %tmp.10();
+        %tmp.12 = 0;
+        %tmp.13 = ne %tmp.11 %tmp.12;
+        %tmp.14 = or %tmp.6 %tmp.13;
+        push %tmp.14;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_210_40_end:
+        %tmp.15 = phi [%tmp.7 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_210_12_begin] [%tmp.14 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_210_40_false] [%tmp.15 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_210_40_end];
+        bf %tmp.15 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_210_8_if_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_210_8_if_true:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_210_66_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 211 12 ]
+        [ "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_210_66_start" "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_210_66_stop" ]
+        %pt.1 = local;
+        %tmp.16 = newa 0;
+        lputv %pt.1 %tmp.16;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 212 12 ]
+        [ "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_210_66_start" "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_210_66_stop" ]
+        %pt1.2 = local;
+        %tmp.17 = newa 0;
+        lputv %pt1.2 %tmp.17;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 213 12 ]
+        [ "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_210_66_start" "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_210_66_stop" ]
+        %pt2.3 = local;
+        %tmp.18 = newa 0;
+        lputv %pt2.3 %tmp.18;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 214 12 ]
+        %tmp.19 = lgetv %dc;
+        %tmp.20 = getv function %tmp.19 :setColor;
+        %tmp.21 = getm $.Toybox.Graphics;
+        %tmp.22 = getv %tmp.21 :COLOR_BLUE;
+        %tmp.23 = getm $.Toybox.Graphics;
+        %tmp.24 = getv %tmp.23 :COLOR_TRANSPARENT;
+        invoke %tmp.19 %tmp.20(%tmp.22, %tmp.24);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 215 12 ]
+        for @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_215_12_for_test @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_215_12_for_incr @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_215_12_for_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_215_12_for_init:
+        [ "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_215_12_for_begin" "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_215_12_for_end" ]
+        %i.4 = local;
+        %tmp.25 = 0;
+        lputv %i.4 %tmp.25;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_215_12_for_test:
+        %tmp.27 = lgetv %i.4;
+        %tmp.28 = getm $;
+        %tmp.29 = getv %tmp.28 :zscore_hrv;
+        %tmp.30 = getv function %tmp.29 :size;
+        %tmp.31 = invoke %tmp.29 %tmp.30();
+        %tmp.32 = lt %tmp.27 %tmp.31;
+        bf %tmp.32 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_215_12_for_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_215_12_for_begin:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_215_55_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 216 16 ]
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_216_16_if_stmt:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_216_20_begin:
+        %tmp.33 = getm $;
+        %tmp.34 = getv %tmp.33 :zscore_hrv;
+        %tmp.35 = as %tmp.34 Array<Float>;
+        %tmp.37 = lgetv %i.4;
+        %tmp.38 = agetv %tmp.35 %tmp.37;
+        %tmp.39 = null;
+        %tmp.40 = ne %tmp.38 %tmp.39;
+        %tmp.41 = dup %tmp.40;
+        bf %tmp.41 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_216_66_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_216_66_true:
+        %tmp.42 = getm $;
+        %tmp.43 = getv %tmp.42 :zscore_rhr;
+        %tmp.44 = as %tmp.43 Array<Float>;
+        %tmp.46 = lgetv %i.4;
+        %tmp.47 = agetv %tmp.44 %tmp.46;
+        %tmp.48 = null;
+        %tmp.49 = ne %tmp.47 %tmp.48;
+        %tmp.50 = and %tmp.40 %tmp.49;
+        push %tmp.50;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_216_66_end:
+        %tmp.51 = phi [%tmp.41 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_216_20_begin] [%tmp.50 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_216_66_true] [%tmp.51 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_216_66_end];
+        bf %tmp.51 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_216_16_if_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_216_16_if_true:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_216_109_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 217 20 ]
+        [ "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_216_109_start" "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_216_109_stop" ]
+        %radius.5 = local;
+        %tmp.52 = self;
+        %tmp.53 = getv function %tmp.52 :scale_radius;
+        %tmp.54 = getm $;
+        %tmp.55 = getv %tmp.54 :zscore_hrv;
+        %tmp.56 = as %tmp.55 Array<Float>;
+        %tmp.58 = lgetv %i.4;
+        %tmp.59 = agetv %tmp.56 %tmp.58;
+        %tmp.60 = getv function %tmp.59 :toFloat;
+        %tmp.61 = invoke %tmp.59 %tmp.60();
+        %tmp.63 = lgetv %r;
+        %tmp.65 = lgetv %radius_ele;
+        %tmp.66 = invoke %tmp.52 %tmp.53(%tmp.61, %tmp.63, %tmp.65);
+        lputv %radius.5 %tmp.66;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 218 20 ]
+        [ "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_216_109_start" "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_216_109_stop" ]
+        %angle.6 = local;
+        %tmp.67 = self;
+        %tmp.68 = getv function %tmp.67 :scale_angle;
+        %tmp.69 = getm $;
+        %tmp.70 = getv %tmp.69 :zscore_rhr;
+        %tmp.71 = as %tmp.70 Array<Float>;
+        %tmp.73 = lgetv %i.4;
+        %tmp.74 = agetv %tmp.71 %tmp.73;
+        %tmp.75 = getv function %tmp.74 :toFloat;
+        %tmp.76 = invoke %tmp.74 %tmp.75();
+        %tmp.77 = invoke %tmp.67 %tmp.68(%tmp.76);
+        lputv %angle.6 %tmp.77;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 219 20 ]
+        %tmp.78 = self;
+        %tmp.79 = getv function %tmp.78 :polar_to_cartesian;
+        %tmp.81 = lgetv %dc;
+        %tmp.83 = lgetv %radius.5;
+        %tmp.85 = lgetv %angle.6;
+        %tmp.86 = invoke %tmp.78 %tmp.79(%tmp.81, %tmp.83, %tmp.85);
+        %tmp.87 = as %tmp.86 Array<Number>;
+        lputv %pt.1 %tmp.87;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 220 20 ]
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_220_20_if_stmt:
+        %tmp.89 = lgetv %i.4;
+        %tmp.90 = 0;
+        %tmp.91 = eq %tmp.89 %tmp.90;
+        bf %tmp.91 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_220_20_if_false;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_220_20_if_true:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_220_32_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 221 24 ]
+        %tmp.92 = lgetv %dc;
+        %tmp.93 = getv function %tmp.92 :setPenWidth;
+        %tmp.94 = 3;
+        invoke %tmp.92 %tmp.93(%tmp.94);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 222 24 ]
+        %tmp.95 = lgetv %dc;
+        %tmp.96 = getv function %tmp.95 :drawCircle;
+        %tmp.98 = lgetv %pt.1;
+        %tmp.99 = 0;
+        %tmp.100 = agetv %tmp.98 %tmp.99;
+        %tmp.102 = lgetv %pt.1;
+        %tmp.103 = 1;
+        %tmp.104 = agetv %tmp.102 %tmp.103;
+        %tmp.105 = 14;
+        invoke %tmp.95 %tmp.96(%tmp.100, %tmp.104, %tmp.105);
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_220_32_stop:
+        goto @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_220_20_if_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_220_20_if_false:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 223 26 ]
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_223_26_if_stmt:
+        %tmp.107 = lgetv %i.4;
+        %tmp.108 = 1;
+        %tmp.109 = eq %tmp.107 %tmp.108;
+        bf %tmp.109 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_223_26_if_false;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_223_26_if_true:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_223_38_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 224 24 ]
+        %tmp.110 = lgetv %dc;
+        %tmp.111 = getv function %tmp.110 :setPenWidth;
+        %tmp.112 = 3;
+        invoke %tmp.110 %tmp.111(%tmp.112);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 225 24 ]
+        %tmp.113 = lgetv %dc;
+        %tmp.114 = getv function %tmp.113 :drawCircle;
+        %tmp.116 = lgetv %pt.1;
+        %tmp.117 = 0;
+        %tmp.118 = agetv %tmp.116 %tmp.117;
+        %tmp.120 = lgetv %pt.1;
+        %tmp.121 = 1;
+        %tmp.122 = agetv %tmp.120 %tmp.121;
+        %tmp.123 = 12;
+        invoke %tmp.113 %tmp.114(%tmp.118, %tmp.122, %tmp.123);
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_223_38_stop:
+        goto @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_223_26_if_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_223_26_if_false:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 226 26 ]
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_226_26_if_stmt:
+        %tmp.125 = lgetv %i.4;
+        %tmp.126 = 2;
+        %tmp.127 = eq %tmp.125 %tmp.126;
+        bf %tmp.127 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_226_26_if_false;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_226_26_if_true:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_226_38_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 227 24 ]
+        %tmp.128 = lgetv %dc;
+        %tmp.129 = getv function %tmp.128 :setPenWidth;
+        %tmp.130 = 3;
+        invoke %tmp.128 %tmp.129(%tmp.130);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 228 24 ]
+        %tmp.131 = lgetv %dc;
+        %tmp.132 = getv function %tmp.131 :drawCircle;
+        %tmp.134 = lgetv %pt.1;
+        %tmp.135 = 0;
+        %tmp.136 = agetv %tmp.134 %tmp.135;
+        %tmp.138 = lgetv %pt.1;
+        %tmp.139 = 1;
+        %tmp.140 = agetv %tmp.138 %tmp.139;
+        %tmp.141 = 10;
+        invoke %tmp.131 %tmp.132(%tmp.136, %tmp.140, %tmp.141);
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_226_38_stop:
+        goto @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_226_26_if_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_226_26_if_false:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 229 26 ]
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_229_26_if_stmt:
+        %tmp.143 = lgetv %i.4;
+        %tmp.144 = 3;
+        %tmp.145 = eq %tmp.143 %tmp.144;
+        bf %tmp.145 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_229_26_if_false;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_229_26_if_true:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_229_38_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 230 24 ]
+        %tmp.146 = lgetv %dc;
+        %tmp.147 = getv function %tmp.146 :setPenWidth;
+        %tmp.148 = 3;
+        invoke %tmp.146 %tmp.147(%tmp.148);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 231 24 ]
+        %tmp.149 = lgetv %dc;
+        %tmp.150 = getv function %tmp.149 :drawCircle;
+        %tmp.152 = lgetv %pt.1;
+        %tmp.153 = 0;
+        %tmp.154 = agetv %tmp.152 %tmp.153;
+        %tmp.156 = lgetv %pt.1;
+        %tmp.157 = 1;
+        %tmp.158 = agetv %tmp.156 %tmp.157;
+        %tmp.159 = 8;
+        invoke %tmp.149 %tmp.150(%tmp.154, %tmp.158, %tmp.159);
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_229_38_stop:
+        goto @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_229_26_if_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_229_26_if_false:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_232_25_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 233 24 ]
+        %tmp.160 = lgetv %dc;
+        %tmp.161 = getv function %tmp.160 :setPenWidth;
+        %tmp.162 = 3;
+        invoke %tmp.160 %tmp.161(%tmp.162);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 234 24 ]
+        %tmp.163 = lgetv %dc;
+        %tmp.164 = getv function %tmp.163 :fillCircle;
+        %tmp.166 = lgetv %pt.1;
+        %tmp.167 = 0;
+        %tmp.168 = agetv %tmp.166 %tmp.167;
+        %tmp.170 = lgetv %pt.1;
+        %tmp.171 = 1;
+        %tmp.172 = agetv %tmp.170 %tmp.171;
+        %tmp.173 = 5;
+        invoke %tmp.163 %tmp.164(%tmp.168, %tmp.172, %tmp.173);
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_232_25_stop:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_229_26_if_end:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_226_26_if_end:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_223_26_if_end:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_220_20_if_end:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_216_109_stop:
+        goto @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_216_16_if_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_216_16_if_end:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_215_55_stop:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_215_12_for_incr:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 215 ]
+        %tmp.174 = lgetv %i.4;
+        %tmp.175 = 1;
+        %tmp.176 = add %tmp.174 %tmp.175;
+        lputv %i.4 %tmp.176;
+        goto @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_215_12_for_test;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_215_12_for_end:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 240 12 ]
+        [ "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_210_66_start" "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_210_66_stop" ]
+        %n_trace.7 = local;
+        %tmp.177 = 4;
+        lputv %n_trace.7 %tmp.177;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 241 12 ]
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_241_12_if_stmt:
+        %tmp.179 = lgetv %n_trace.7;
+        %tmp.180 = getm $;
+        %tmp.181 = getv %tmp.180 :zscore_hrv;
+        %tmp.182 = getv function %tmp.181 :size;
+        %tmp.183 = invoke %tmp.181 %tmp.182();
+        %tmp.184 = gte %tmp.179 %tmp.183;
+        bf %tmp.184 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_241_12_if_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_241_12_if_true:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_241_48_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 242 16 ]
+        %tmp.185 = getm $;
+        %tmp.186 = getv %tmp.185 :zscore_hrv;
+        %tmp.187 = getv function %tmp.186 :size;
+        %tmp.188 = invoke %tmp.186 %tmp.187();
+        %tmp.189 = 1;
+        %tmp.190 = sub %tmp.188 %tmp.189;
+        lputv %n_trace.7 %tmp.190;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_241_48_stop:
+        goto @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_241_12_if_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_241_12_if_end:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 245 12 ]
+        for @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_245_12_for_test @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_245_12_for_incr @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_245_12_for_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_245_12_for_init:
+        [ "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_245_12_for_begin" "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_245_12_for_end" ]
+        %i.8 = local;
+        %tmp.191 = 0;
+        lputv %i.8 %tmp.191;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_245_12_for_test:
+        %tmp.193 = lgetv %i.8;
+        %tmp.195 = lgetv %n_trace.7;
+        %tmp.196 = lt %tmp.193 %tmp.195;
+        bf %tmp.196 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_245_12_for_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_245_12_for_begin:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_245_43_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 246 16 ]
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_246_16_if_stmt:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_246_20_begin:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_246_20_begin:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_246_20_begin:
+        %tmp.197 = getm $;
+        %tmp.198 = getv %tmp.197 :zscore_hrv;
+        %tmp.199 = as %tmp.198 Array<Float>;
+        %tmp.201 = lgetv %i.8;
+        %tmp.202 = agetv %tmp.199 %tmp.201;
+        %tmp.203 = null;
+        %tmp.204 = ne %tmp.202 %tmp.203;
+        %tmp.205 = dup %tmp.204;
+        bf %tmp.205 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_246_66_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_246_66_true:
+        %tmp.206 = getm $;
+        %tmp.207 = getv %tmp.206 :zscore_rhr;
+        %tmp.208 = as %tmp.207 Array<Float>;
+        %tmp.210 = lgetv %i.8;
+        %tmp.211 = agetv %tmp.208 %tmp.210;
+        %tmp.212 = null;
+        %tmp.213 = ne %tmp.211 %tmp.212;
+        %tmp.214 = and %tmp.204 %tmp.213;
+        push %tmp.214;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_246_66_end:
+        %tmp.215 = phi [%tmp.205 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_246_20_begin] [%tmp.214 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_246_66_true] [%tmp.215 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_246_66_end];
+        %tmp.216 = dup %tmp.215;
+        bf %tmp.216 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_246_112_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_246_112_true:
+        %tmp.217 = getm $;
+        %tmp.218 = getv %tmp.217 :zscore_hrv;
+        %tmp.219 = as %tmp.218 Array<Float>;
+        %tmp.221 = lgetv %i.8;
+        %tmp.222 = 1;
+        %tmp.223 = add %tmp.221 %tmp.222;
+        %tmp.224 = agetv %tmp.219 %tmp.223;
+        %tmp.225 = null;
+        %tmp.226 = ne %tmp.224 %tmp.225;
+        %tmp.227 = and %tmp.215 %tmp.226;
+        push %tmp.227;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_246_112_end:
+        %tmp.228 = phi [%tmp.216 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_246_20_begin] [%tmp.227 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_246_112_true] [%tmp.228 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_246_112_end];
+        %tmp.229 = dup %tmp.228;
+        bf %tmp.229 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_246_160_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_246_160_true:
+        %tmp.230 = getm $;
+        %tmp.231 = getv %tmp.230 :zscore_rhr;
+        %tmp.232 = as %tmp.231 Array<Float>;
+        %tmp.234 = lgetv %i.8;
+        %tmp.235 = 1;
+        %tmp.236 = add %tmp.234 %tmp.235;
+        %tmp.237 = agetv %tmp.232 %tmp.236;
+        %tmp.238 = null;
+        %tmp.239 = ne %tmp.237 %tmp.238;
+        %tmp.240 = and %tmp.228 %tmp.239;
+        push %tmp.240;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_246_160_end:
+        %tmp.241 = phi [%tmp.229 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_246_20_begin] [%tmp.240 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_246_160_true] [%tmp.241 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_246_160_end];
+        bf %tmp.241 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_246_16_if_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_246_16_if_true:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_246_205_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 247 20 ]
+        %tmp.242 = lgetv %dc;
+        %tmp.243 = getv function %tmp.242 :setPenWidth;
+        %tmp.244 = 3;
+        invoke %tmp.242 %tmp.243(%tmp.244);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 248 20 ]
+        [ "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_246_205_start" "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_246_205_stop" ]
+        %radius.9 = local;
+        %tmp.245 = self;
+        %tmp.246 = getv function %tmp.245 :scale_radius;
+        %tmp.247 = getm $;
+        %tmp.248 = getv %tmp.247 :zscore_hrv;
+        %tmp.249 = as %tmp.248 Array<Float>;
+        %tmp.251 = lgetv %i.8;
+        %tmp.252 = agetv %tmp.249 %tmp.251;
+        %tmp.253 = getv function %tmp.252 :toFloat;
+        %tmp.254 = invoke %tmp.252 %tmp.253();
+        %tmp.256 = lgetv %r;
+        %tmp.258 = lgetv %radius_ele;
+        %tmp.259 = invoke %tmp.245 %tmp.246(%tmp.254, %tmp.256, %tmp.258);
+        lputv %radius.9 %tmp.259;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 249 20 ]
+        [ "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_246_205_start" "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_246_205_stop" ]
+        %angle.10 = local;
+        %tmp.260 = self;
+        %tmp.261 = getv function %tmp.260 :scale_angle;
+        %tmp.262 = getm $;
+        %tmp.263 = getv %tmp.262 :zscore_rhr;
+        %tmp.264 = as %tmp.263 Array<Float>;
+        %tmp.266 = lgetv %i.8;
+        %tmp.267 = agetv %tmp.264 %tmp.266;
+        %tmp.268 = getv function %tmp.267 :toFloat;
+        %tmp.269 = invoke %tmp.267 %tmp.268();
+        %tmp.270 = invoke %tmp.260 %tmp.261(%tmp.269);
+        lputv %angle.10 %tmp.270;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 250 20 ]
+        %tmp.271 = self;
+        %tmp.272 = getv function %tmp.271 :polar_to_cartesian;
+        %tmp.274 = lgetv %dc;
+        %tmp.276 = lgetv %radius.9;
+        %tmp.278 = lgetv %angle.10;
+        %tmp.279 = invoke %tmp.271 %tmp.272(%tmp.274, %tmp.276, %tmp.278);
+        %tmp.280 = as %tmp.279 Array<Number>;
+        lputv %pt1.2 %tmp.280;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 252 20 ]
+        %tmp.281 = self;
+        %tmp.282 = getv function %tmp.281 :scale_radius;
+        %tmp.283 = getm $;
+        %tmp.284 = getv %tmp.283 :zscore_hrv;
+        %tmp.285 = as %tmp.284 Array<Float>;
+        %tmp.287 = lgetv %i.8;
+        %tmp.288 = 1;
+        %tmp.289 = add %tmp.287 %tmp.288;
+        %tmp.290 = agetv %tmp.285 %tmp.289;
+        %tmp.291 = getv function %tmp.290 :toFloat;
+        %tmp.292 = invoke %tmp.290 %tmp.291();
+        %tmp.294 = lgetv %r;
+        %tmp.296 = lgetv %radius_ele;
+        %tmp.297 = invoke %tmp.281 %tmp.282(%tmp.292, %tmp.294, %tmp.296);
+        lputv %radius.9 %tmp.297;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 253 20 ]
+        %tmp.298 = self;
+        %tmp.299 = getv function %tmp.298 :scale_angle;
+        %tmp.300 = getm $;
+        %tmp.301 = getv %tmp.300 :zscore_rhr;
+        %tmp.302 = as %tmp.301 Array<Float>;
+        %tmp.304 = lgetv %i.8;
+        %tmp.305 = 1;
+        %tmp.306 = add %tmp.304 %tmp.305;
+        %tmp.307 = agetv %tmp.302 %tmp.306;
+        %tmp.308 = getv function %tmp.307 :toFloat;
+        %tmp.309 = invoke %tmp.307 %tmp.308();
+        %tmp.310 = invoke %tmp.298 %tmp.299(%tmp.309);
+        lputv %angle.10 %tmp.310;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 254 20 ]
+        %tmp.311 = self;
+        %tmp.312 = getv function %tmp.311 :polar_to_cartesian;
+        %tmp.314 = lgetv %dc;
+        %tmp.316 = lgetv %radius.9;
+        %tmp.318 = lgetv %angle.10;
+        %tmp.319 = invoke %tmp.311 %tmp.312(%tmp.314, %tmp.316, %tmp.318);
+        %tmp.320 = as %tmp.319 Array<Number>;
+        lputv %pt2.3 %tmp.320;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 255 20 ]
+        %tmp.321 = lgetv %dc;
+        %tmp.322 = getv function %tmp.321 :drawLine;
+        %tmp.324 = lgetv %pt1.2;
+        %tmp.325 = 0;
+        %tmp.326 = agetv %tmp.324 %tmp.325;
+        %tmp.328 = lgetv %pt1.2;
+        %tmp.329 = 1;
+        %tmp.330 = agetv %tmp.328 %tmp.329;
+        %tmp.332 = lgetv %pt2.3;
+        %tmp.333 = 0;
+        %tmp.334 = agetv %tmp.332 %tmp.333;
+        %tmp.336 = lgetv %pt2.3;
+        %tmp.337 = 1;
+        %tmp.338 = agetv %tmp.336 %tmp.337;
+        invoke %tmp.321 %tmp.322(%tmp.326, %tmp.330, %tmp.334, %tmp.338);
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_246_205_stop:
+        goto @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_246_16_if_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_246_16_if_end:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_245_43_stop:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_245_12_for_incr:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 245 ]
+        %tmp.339 = lgetv %i.8;
+        %tmp.340 = 1;
+        %tmp.341 = add %tmp.339 %tmp.340;
+        lputv %i.8 %tmp.341;
+        goto @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_245_12_for_test;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_245_12_for_end:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 258 12 ]
+        %tmp.342 = lgetv %dc;
+        %tmp.343 = getv function %tmp.342 :setPenWidth;
+        %tmp.344 = 1;
+        invoke %tmp.342 %tmp.343(%tmp.344);
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_210_66_stop:
+        goto @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_210_8_if_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_210_8_if_end:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_209_58_stop:
+    }
+    [ @file = "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc"; @line = 263; ]
+    function onUpdate(dc as Dc) as Void {
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_263_40_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 264 8 ]
+        %tmp.1 = lgetv %dc;
+        %tmp.2 = getv function %tmp.1 :setColor;
+        %tmp.3 = getm $.Toybox.Graphics;
+        %tmp.4 = getv %tmp.3 :COLOR_WHITE;
+        %tmp.5 = getm $.Toybox.Graphics;
+        %tmp.6 = getv %tmp.5 :COLOR_BLACK;
+        invoke %tmp.1 %tmp.2(%tmp.4, %tmp.6);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 265 8 ]
+        %tmp.7 = lgetv %dc;
+        %tmp.8 = getv function %tmp.7 :clear;
+        invoke %tmp.7 %tmp.8();
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 266 8 ]
+        [ "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_263_40_start" "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_263_40_stop" ]
+        %r.1 = local;
+        %tmp.9 = lgetv %dc;
+        %tmp.10 = getv function %tmp.9 :getWidth;
+        %tmp.11 = invoke %tmp.9 %tmp.10();
+        %tmp.12 = 2;
+        %tmp.13 = div %tmp.11 %tmp.12;
+        %tmp.14 = getv function %tmp.13 :toNumber;
+        %tmp.15 = invoke %tmp.13 %tmp.14();
+        lputv %r.1 %tmp.15;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 267 8 ]
+        [ "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_263_40_start" "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_263_40_stop" ]
+        %pta.2 = local;
+        %tmp.16 = newa 2;
+        %tmp.17 = 0;
+        %tmp.18 = dup %tmp.16;
+        %tmp.19 = aputv %tmp.18 0 %tmp.17;
+        %tmp.20 = 0;
+        %tmp.21 = dup %tmp.19;
+        %tmp.22 = aputv %tmp.21 1 %tmp.20;
+        lputv %pta.2 %tmp.22;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 268 8 ]
+        [ "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_263_40_start" "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_263_40_stop" ]
+        %ptb.3 = local;
+        %tmp.23 = newa 2;
+        %tmp.24 = 0;
+        %tmp.25 = dup %tmp.23;
+        %tmp.26 = aputv %tmp.25 0 %tmp.24;
+        %tmp.27 = 0;
+        %tmp.28 = dup %tmp.26;
+        %tmp.29 = aputv %tmp.28 1 %tmp.27;
+        lputv %ptb.3 %tmp.29;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 270 8 ]
+        [ "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_263_40_start" "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_263_40_stop" ]
+        %radius_ele.4 = local;
+        %tmp.31 = lgetv %r.1;
+        %tmp.32 = 8;
+        %tmp.33 = div %tmp.31 %tmp.32;
+        %tmp.34 = getv function %tmp.33 :toNumber;
+        %tmp.35 = invoke %tmp.33 %tmp.34();
+        lputv %radius_ele.4 %tmp.35;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 271 8 ]
+        %tmp.36 = self;
+        %tmp.37 = getv function %tmp.36 :draw_poly;
+        %tmp.39 = lgetv %dc;
+        %tmp.41 = lgetv %radius_ele.4;
+        %tmp.42 = newa 2;
+        %tmp.43 = 2;
+        %tmp.44 = dup %tmp.42;
+        %tmp.45 = aputv %tmp.44 0 %tmp.43;
+        %tmp.46 = 135;
+        %tmp.47 = dup %tmp.45;
+        %tmp.48 = aputv %tmp.47 1 %tmp.46;
+        %tmp.49 = newa 2;
+        %tmp.50 = 6;
+        %tmp.51 = dup %tmp.49;
+        %tmp.52 = aputv %tmp.51 0 %tmp.50;
+        %tmp.53 = 135;
+        %tmp.54 = dup %tmp.52;
+        %tmp.55 = aputv %tmp.54 1 %tmp.53;
+        %tmp.56 = newa 2;
+        %tmp.57 = 6;
+        %tmp.58 = dup %tmp.56;
+        %tmp.59 = aputv %tmp.58 0 %tmp.57;
+        %tmp.60 = 75;
+        %tmp.61 = dup %tmp.59;
+        %tmp.62 = aputv %tmp.61 1 %tmp.60;
+        %tmp.63 = newa 2;
+        %tmp.64 = 2;
+        %tmp.65 = dup %tmp.63;
+        %tmp.66 = aputv %tmp.65 0 %tmp.64;
+        %tmp.67 = 75;
+        %tmp.68 = dup %tmp.66;
+        %tmp.69 = aputv %tmp.68 1 %tmp.67;
+        %tmp.70 = getm $.Toybox.Graphics;
+        %tmp.71 = getv %tmp.70 :COLOR_LT_GRAY;
+        invoke %tmp.36 %tmp.37(%tmp.39, %tmp.41, %tmp.48, %tmp.55, %tmp.62, %tmp.69, %tmp.71);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 272 8 ]
+        %tmp.72 = self;
+        %tmp.73 = getv function %tmp.72 :draw_poly;
+        %tmp.75 = lgetv %dc;
+        %tmp.77 = lgetv %radius_ele.4;
+        %tmp.78 = newa 2;
+        %tmp.79 = 6;
+        %tmp.80 = dup %tmp.78;
+        %tmp.81 = aputv %tmp.80 0 %tmp.79;
+        %tmp.82 = 135;
+        %tmp.83 = dup %tmp.81;
+        %tmp.84 = aputv %tmp.83 1 %tmp.82;
+        %tmp.85 = newa 2;
+        %tmp.86 = 8;
+        %tmp.87 = dup %tmp.85;
+        %tmp.88 = aputv %tmp.87 0 %tmp.86;
+        %tmp.89 = 135;
+        %tmp.90 = dup %tmp.88;
+        %tmp.91 = aputv %tmp.90 1 %tmp.89;
+        %tmp.92 = newa 2;
+        %tmp.93 = 8;
+        %tmp.94 = dup %tmp.92;
+        %tmp.95 = aputv %tmp.94 0 %tmp.93;
+        %tmp.96 = 75;
+        %tmp.97 = dup %tmp.95;
+        %tmp.98 = aputv %tmp.97 1 %tmp.96;
+        %tmp.99 = newa 2;
+        %tmp.100 = 6;
+        %tmp.101 = dup %tmp.99;
+        %tmp.102 = aputv %tmp.101 0 %tmp.100;
+        %tmp.103 = 75;
+        %tmp.104 = dup %tmp.102;
+        %tmp.105 = aputv %tmp.104 1 %tmp.103;
+        %tmp.106 = getm $.Toybox.Graphics;
+        %tmp.107 = getv %tmp.106 :COLOR_RED;
+        invoke %tmp.72 %tmp.73(%tmp.75, %tmp.77, %tmp.84, %tmp.91, %tmp.98, %tmp.105, %tmp.107);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 273 8 ]
+        %tmp.108 = self;
+        %tmp.109 = getv function %tmp.108 :draw_poly;
+        %tmp.111 = lgetv %dc;
+        %tmp.113 = lgetv %radius_ele.4;
+        %tmp.114 = newa 2;
+        %tmp.115 = 2;
+        %tmp.116 = dup %tmp.114;
+        %tmp.117 = aputv %tmp.116 0 %tmp.115;
+        %tmp.118 = 75;
+        %tmp.119 = dup %tmp.117;
+        %tmp.120 = aputv %tmp.119 1 %tmp.118;
+        %tmp.121 = newa 2;
+        %tmp.122 = 6;
+        %tmp.123 = dup %tmp.121;
+        %tmp.124 = aputv %tmp.123 0 %tmp.122;
+        %tmp.125 = 75;
+        %tmp.126 = dup %tmp.124;
+        %tmp.127 = aputv %tmp.126 1 %tmp.125;
+        %tmp.128 = newa 2;
+        %tmp.129 = 6;
+        %tmp.130 = dup %tmp.128;
+        %tmp.131 = aputv %tmp.130 0 %tmp.129;
+        %tmp.132 = -90;
+        %tmp.133 = dup %tmp.131;
+        %tmp.134 = aputv %tmp.133 1 %tmp.132;
+        %tmp.135 = newa 2;
+        %tmp.136 = 2;
+        %tmp.137 = dup %tmp.135;
+        %tmp.138 = aputv %tmp.137 0 %tmp.136;
+        %tmp.139 = -90;
+        %tmp.140 = dup %tmp.138;
+        %tmp.141 = aputv %tmp.140 1 %tmp.139;
+        %tmp.142 = getm $.Toybox.Graphics;
+        %tmp.143 = getv %tmp.142 :COLOR_GREEN;
+        invoke %tmp.108 %tmp.109(%tmp.111, %tmp.113, %tmp.120, %tmp.127, %tmp.134, %tmp.141, %tmp.143);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 274 8 ]
+        %tmp.144 = self;
+        %tmp.145 = getv function %tmp.144 :draw_poly;
+        %tmp.147 = lgetv %dc;
+        %tmp.149 = lgetv %radius_ele.4;
+        %tmp.150 = newa 2;
+        %tmp.151 = 6;
+        %tmp.152 = dup %tmp.150;
+        %tmp.153 = aputv %tmp.152 0 %tmp.151;
+        %tmp.154 = 75;
+        %tmp.155 = dup %tmp.153;
+        %tmp.156 = aputv %tmp.155 1 %tmp.154;
+        %tmp.157 = newa 2;
+        %tmp.158 = 8;
+        %tmp.159 = dup %tmp.157;
+        %tmp.160 = aputv %tmp.159 0 %tmp.158;
+        %tmp.161 = 75;
+        %tmp.162 = dup %tmp.160;
+        %tmp.163 = aputv %tmp.162 1 %tmp.161;
+        %tmp.164 = newa 2;
+        %tmp.165 = 8;
+        %tmp.166 = dup %tmp.164;
+        %tmp.167 = aputv %tmp.166 0 %tmp.165;
+        %tmp.168 = -90;
+        %tmp.169 = dup %tmp.167;
+        %tmp.170 = aputv %tmp.169 1 %tmp.168;
+        %tmp.171 = newa 2;
+        %tmp.172 = 6;
+        %tmp.173 = dup %tmp.171;
+        %tmp.174 = aputv %tmp.173 0 %tmp.172;
+        %tmp.175 = -90;
+        %tmp.176 = dup %tmp.174;
+        %tmp.177 = aputv %tmp.176 1 %tmp.175;
+        %tmp.178 = getm $.Toybox.Graphics;
+        %tmp.179 = getv %tmp.178 :COLOR_ORANGE;
+        invoke %tmp.144 %tmp.145(%tmp.147, %tmp.149, %tmp.156, %tmp.163, %tmp.170, %tmp.177, %tmp.179);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 275 8 ]
+        %tmp.180 = self;
+        %tmp.181 = getv function %tmp.180 :draw_poly;
+        %tmp.183 = lgetv %dc;
+        %tmp.185 = lgetv %radius_ele.4;
+        %tmp.186 = newa 2;
+        %tmp.187 = 2;
+        %tmp.188 = dup %tmp.186;
+        %tmp.189 = aputv %tmp.188 0 %tmp.187;
+        %tmp.190 = 45;
+        %tmp.191 = dup %tmp.189;
+        %tmp.192 = aputv %tmp.191 1 %tmp.190;
+        %tmp.193 = newa 2;
+        %tmp.194 = 4;
+        %tmp.195 = dup %tmp.193;
+        %tmp.196 = aputv %tmp.195 0 %tmp.194;
+        %tmp.197 = 45;
+        %tmp.198 = dup %tmp.196;
+        %tmp.199 = aputv %tmp.198 1 %tmp.197;
+        %tmp.200 = newa 2;
+        %tmp.201 = 4;
+        %tmp.202 = dup %tmp.200;
+        %tmp.203 = aputv %tmp.202 0 %tmp.201;
+        %tmp.204 = -45;
+        %tmp.205 = dup %tmp.203;
+        %tmp.206 = aputv %tmp.205 1 %tmp.204;
+        %tmp.207 = newa 2;
+        %tmp.208 = 2;
+        %tmp.209 = dup %tmp.207;
+        %tmp.210 = aputv %tmp.209 0 %tmp.208;
+        %tmp.211 = -45;
+        %tmp.212 = dup %tmp.210;
+        %tmp.213 = aputv %tmp.212 1 %tmp.211;
+        %tmp.214 = getm $.Toybox.Graphics;
+        %tmp.215 = getv %tmp.214 :COLOR_DK_GREEN;
+        invoke %tmp.180 %tmp.181(%tmp.183, %tmp.185, %tmp.192, %tmp.199, %tmp.206, %tmp.213, %tmp.215);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 276 8 ]
+        %tmp.216 = self;
+        %tmp.217 = getv function %tmp.216 :draw_poly;
+        %tmp.219 = lgetv %dc;
+        %tmp.221 = lgetv %radius_ele.4;
+        %tmp.222 = newa 2;
+        %tmp.223 = 2;
+        %tmp.224 = dup %tmp.222;
+        %tmp.225 = aputv %tmp.224 0 %tmp.223;
+        %tmp.226 = -90;
+        %tmp.227 = dup %tmp.225;
+        %tmp.228 = aputv %tmp.227 1 %tmp.226;
+        %tmp.229 = newa 2;
+        %tmp.230 = 5;
+        %tmp.231 = dup %tmp.229;
+        %tmp.232 = aputv %tmp.231 0 %tmp.230;
+        %tmp.233 = -90;
+        %tmp.234 = dup %tmp.232;
+        %tmp.235 = aputv %tmp.234 1 %tmp.233;
+        %tmp.236 = newa 2;
+        %tmp.237 = 5;
+        %tmp.238 = dup %tmp.236;
+        %tmp.239 = aputv %tmp.238 0 %tmp.237;
+        %tmp.240 = -135;
+        %tmp.241 = dup %tmp.239;
+        %tmp.242 = aputv %tmp.241 1 %tmp.240;
+        %tmp.243 = newa 2;
+        %tmp.244 = 2;
+        %tmp.245 = dup %tmp.243;
+        %tmp.246 = aputv %tmp.245 0 %tmp.244;
+        %tmp.247 = -135;
+        %tmp.248 = dup %tmp.246;
+        %tmp.249 = aputv %tmp.248 1 %tmp.247;
+        %tmp.250 = getm $.Toybox.Graphics;
+        %tmp.251 = getv %tmp.250 :COLOR_ORANGE;
+        invoke %tmp.216 %tmp.217(%tmp.219, %tmp.221, %tmp.228, %tmp.235, %tmp.242, %tmp.249, %tmp.251);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 277 8 ]
+        %tmp.252 = self;
+        %tmp.253 = getv function %tmp.252 :draw_poly;
+        %tmp.255 = lgetv %dc;
+        %tmp.257 = lgetv %radius_ele.4;
+        %tmp.258 = newa 2;
+        %tmp.259 = 5;
+        %tmp.260 = dup %tmp.258;
+        %tmp.261 = aputv %tmp.260 0 %tmp.259;
+        %tmp.262 = -90;
+        %tmp.263 = dup %tmp.261;
+        %tmp.264 = aputv %tmp.263 1 %tmp.262;
+        %tmp.265 = newa 2;
+        %tmp.266 = 6;
+        %tmp.267 = dup %tmp.265;
+        %tmp.268 = aputv %tmp.267 0 %tmp.266;
+        %tmp.269 = -90;
+        %tmp.270 = dup %tmp.268;
+        %tmp.271 = aputv %tmp.270 1 %tmp.269;
+        %tmp.272 = newa 2;
+        %tmp.273 = 6;
+        %tmp.274 = dup %tmp.272;
+        %tmp.275 = aputv %tmp.274 0 %tmp.273;
+        %tmp.276 = -135;
+        %tmp.277 = dup %tmp.275;
+        %tmp.278 = aputv %tmp.277 1 %tmp.276;
+        %tmp.279 = newa 2;
+        %tmp.280 = 5;
+        %tmp.281 = dup %tmp.279;
+        %tmp.282 = aputv %tmp.281 0 %tmp.280;
+        %tmp.283 = -135;
+        %tmp.284 = dup %tmp.282;
+        %tmp.285 = aputv %tmp.284 1 %tmp.283;
+        %tmp.286 = getm $.Toybox.Graphics;
+        %tmp.287 = getv %tmp.286 :COLOR_LT_GRAY;
+        invoke %tmp.252 %tmp.253(%tmp.255, %tmp.257, %tmp.264, %tmp.271, %tmp.278, %tmp.285, %tmp.287);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 278 8 ]
+        %tmp.288 = self;
+        %tmp.289 = getv function %tmp.288 :draw_poly;
+        %tmp.291 = lgetv %dc;
+        %tmp.293 = lgetv %radius_ele.4;
+        %tmp.294 = newa 2;
+        %tmp.295 = 6;
+        %tmp.296 = dup %tmp.294;
+        %tmp.297 = aputv %tmp.296 0 %tmp.295;
+        %tmp.298 = -90;
+        %tmp.299 = dup %tmp.297;
+        %tmp.300 = aputv %tmp.299 1 %tmp.298;
+        %tmp.301 = newa 2;
+        %tmp.302 = 8;
+        %tmp.303 = dup %tmp.301;
+        %tmp.304 = aputv %tmp.303 0 %tmp.302;
+        %tmp.305 = -90;
+        %tmp.306 = dup %tmp.304;
+        %tmp.307 = aputv %tmp.306 1 %tmp.305;
+        %tmp.308 = newa 2;
+        %tmp.309 = 8;
+        %tmp.310 = dup %tmp.308;
+        %tmp.311 = aputv %tmp.310 0 %tmp.309;
+        %tmp.312 = -135;
+        %tmp.313 = dup %tmp.311;
+        %tmp.314 = aputv %tmp.313 1 %tmp.312;
+        %tmp.315 = newa 2;
+        %tmp.316 = 6;
+        %tmp.317 = dup %tmp.315;
+        %tmp.318 = aputv %tmp.317 0 %tmp.316;
+        %tmp.319 = -135;
+        %tmp.320 = dup %tmp.318;
+        %tmp.321 = aputv %tmp.320 1 %tmp.319;
+        %tmp.322 = getm $.Toybox.Graphics;
+        %tmp.323 = getv %tmp.322 :COLOR_DK_GRAY;
+        invoke %tmp.288 %tmp.289(%tmp.291, %tmp.293, %tmp.300, %tmp.307, %tmp.314, %tmp.321, %tmp.323);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 279 8 ]
+        %tmp.324 = self;
+        %tmp.325 = getv function %tmp.324 :draw_poly;
+        %tmp.327 = lgetv %dc;
+        %tmp.329 = lgetv %radius_ele.4;
+        %tmp.330 = newa 2;
+        %tmp.331 = 5;
+        %tmp.332 = dup %tmp.330;
+        %tmp.333 = aputv %tmp.332 0 %tmp.331;
+        %tmp.334 = 45;
+        %tmp.335 = dup %tmp.333;
+        %tmp.336 = aputv %tmp.335 1 %tmp.334;
+        %tmp.337 = newa 2;
+        %tmp.338 = 6;
+        %tmp.339 = dup %tmp.337;
+        %tmp.340 = aputv %tmp.339 0 %tmp.338;
+        %tmp.341 = 45;
+        %tmp.342 = dup %tmp.340;
+        %tmp.343 = aputv %tmp.342 1 %tmp.341;
+        %tmp.344 = newa 2;
+        %tmp.345 = 6;
+        %tmp.346 = dup %tmp.344;
+        %tmp.347 = aputv %tmp.346 0 %tmp.345;
+        %tmp.348 = 0;
+        %tmp.349 = dup %tmp.347;
+        %tmp.350 = aputv %tmp.349 1 %tmp.348;
+        %tmp.351 = newa 2;
+        %tmp.352 = 5;
+        %tmp.353 = dup %tmp.351;
+        %tmp.354 = aputv %tmp.353 0 %tmp.352;
+        %tmp.355 = 0;
+        %tmp.356 = dup %tmp.354;
+        %tmp.357 = aputv %tmp.356 1 %tmp.355;
+        %tmp.358 = getm $.Toybox.Graphics;
+        %tmp.359 = getv %tmp.358 :COLOR_PURPLE;
+        invoke %tmp.324 %tmp.325(%tmp.327, %tmp.329, %tmp.336, %tmp.343, %tmp.350, %tmp.357, %tmp.359);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 280 8 ]
+        %tmp.360 = self;
+        %tmp.361 = getv function %tmp.360 :draw_grid;
+        %tmp.363 = lgetv %dc;
+        %tmp.365 = lgetv %r.1;
+        %tmp.367 = lgetv %radius_ele.4;
+        %tmp.369 = lgetv %pta.2;
+        %tmp.371 = lgetv %ptb.3;
+        invoke %tmp.360 %tmp.361(%tmp.363, %tmp.365, %tmp.367, %tmp.369, %tmp.371);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 283 8 ]
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_283_8_if_stmt:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_283_12_begin:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_283_12_begin:
+        %tmp.372 = getm $;
+        %tmp.373 = getv %tmp.372 :apikey_set;
+        %tmp.374 = true;
+        %tmp.375 = eq %tmp.373 %tmp.374;
+        %tmp.376 = dup %tmp.375;
+        bf %tmp.376 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_283_37_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_283_37_true:
+        %tmp.377 = getm $;
+        %tmp.378 = getv %tmp.377 :athleteid_set;
+        %tmp.379 = true;
+        %tmp.380 = eq %tmp.378 %tmp.379;
+        %tmp.381 = and %tmp.375 %tmp.380;
+        push %tmp.381;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_283_37_end:
+        %tmp.382 = phi [%tmp.376 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_283_12_begin] [%tmp.381 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_283_37_true] [%tmp.382 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_283_37_end];
+        %tmp.383 = dup %tmp.382;
+        bf %tmp.383 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_283_65_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_283_65_true:
+        %tmp.384 = getm $;
+        %tmp.385 = getv %tmp.384 :request_failed;
+        %tmp.386 = 200;
+        %tmp.387 = eq %tmp.385 %tmp.386;
+        %tmp.388 = and %tmp.382 %tmp.387;
+        push %tmp.388;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_283_65_end:
+        %tmp.389 = phi [%tmp.383 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_283_12_begin] [%tmp.388 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_283_65_true] [%tmp.389 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_283_65_end];
+        bf %tmp.389 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_283_8_if_false;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_283_8_if_true:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_283_90_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 284 12 ]
+        %tmp.390 = self;
+        %tmp.391 = getv function %tmp.390 :draw_status;
+        %tmp.393 = lgetv %dc;
+        %tmp.395 = lgetv %radius_ele.4;
+        invoke %tmp.390 %tmp.391(%tmp.393, %tmp.395);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 285 12 ]
+        %tmp.396 = self;
+        %tmp.397 = getv function %tmp.396 :draw_points;
+        %tmp.399 = lgetv %dc;
+        %tmp.401 = lgetv %r.1;
+        %tmp.403 = lgetv %radius_ele.4;
+        invoke %tmp.396 %tmp.397(%tmp.399, %tmp.401, %tmp.403);
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_283_90_stop:
+        goto @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_283_8_if_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_283_8_if_false:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 286 14 ]
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_286_14_if_stmt:
+        %tmp.404 = getm $;
+        %tmp.405 = getv %tmp.404 :apikey_set;
+        %tmp.406 = false;
+        %tmp.407 = eq %tmp.405 %tmp.406;
+        bf %tmp.407 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_286_14_if_false;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_286_14_if_true:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_286_41_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 287 12 ]
+        [ "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_286_41_start" "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_286_41_stop" ]
+        %pt.5 = local;
+        %tmp.408 = self;
+        %tmp.409 = getv function %tmp.408 :polar_to_cartesian;
+        %tmp.411 = lgetv %dc;
+        %tmp.412 = 3;
+        %tmp.414 = lgetv %radius_ele.4;
+        %tmp.415 = mul %tmp.412 %tmp.414;
+        %tmp.416 = 180;
+        %tmp.417 = invoke %tmp.408 %tmp.409(%tmp.411, %tmp.415, %tmp.416);
+        %tmp.418 = as %tmp.417 Array<Number>;
+        lputv %pt.5 %tmp.418;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 288 12 ]
+        %tmp.419 = lgetv %dc;
+        %tmp.420 = getv function %tmp.419 :setColor;
+        %tmp.421 = getm $.Toybox.Graphics;
+        %tmp.422 = getv %tmp.421 :COLOR_WHITE;
+        %tmp.423 = getm $.Toybox.Graphics;
+        %tmp.424 = getv %tmp.423 :COLOR_TRANSPARENT;
+        invoke %tmp.419 %tmp.420(%tmp.422, %tmp.424);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 289 12 ]
+        %tmp.425 = lgetv %dc;
+        %tmp.426 = getv function %tmp.425 :drawText;
+        %tmp.428 = lgetv %pt.5;
+        %tmp.429 = 0;
+        %tmp.430 = agetv %tmp.428 %tmp.429;
+        %tmp.432 = lgetv %pt.5;
+        %tmp.433 = 1;
+        %tmp.434 = agetv %tmp.432 %tmp.433;
+        %tmp.435 = getm $.Toybox.Graphics;
+        %tmp.436 = getv %tmp.435 :FONT_XTINY;
+        %tmp.437 = "Set api key\n In settings...";
+        %tmp.438 = getm $.Toybox.Graphics;
+        %tmp.439 = getv %tmp.438 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.425 %tmp.426(%tmp.430, %tmp.434, %tmp.436, %tmp.437, %tmp.439);
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_286_41_stop:
+        goto @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_286_14_if_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_286_14_if_false:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 290 15 ]
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_290_15_if_stmt:
+        %tmp.440 = getm $;
+        %tmp.441 = getv %tmp.440 :athleteid_set;
+        %tmp.442 = false;
+        %tmp.443 = eq %tmp.441 %tmp.442;
+        bf %tmp.443 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_290_15_if_false;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_290_15_if_true:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_290_45_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 291 12 ]
+        [ "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_290_45_start" "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_290_45_stop" ]
+        %pt.6 = local;
+        %tmp.444 = self;
+        %tmp.445 = getv function %tmp.444 :polar_to_cartesian;
+        %tmp.447 = lgetv %dc;
+        %tmp.448 = 3;
+        %tmp.450 = lgetv %radius_ele.4;
+        %tmp.451 = mul %tmp.448 %tmp.450;
+        %tmp.452 = 180;
+        %tmp.453 = invoke %tmp.444 %tmp.445(%tmp.447, %tmp.451, %tmp.452);
+        %tmp.454 = as %tmp.453 Array<Number>;
+        lputv %pt.6 %tmp.454;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 292 12 ]
+        %tmp.455 = lgetv %dc;
+        %tmp.456 = getv function %tmp.455 :setColor;
+        %tmp.457 = getm $.Toybox.Graphics;
+        %tmp.458 = getv %tmp.457 :COLOR_WHITE;
+        %tmp.459 = getm $.Toybox.Graphics;
+        %tmp.460 = getv %tmp.459 :COLOR_TRANSPARENT;
+        invoke %tmp.455 %tmp.456(%tmp.458, %tmp.460);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 293 12 ]
+        %tmp.461 = lgetv %dc;
+        %tmp.462 = getv function %tmp.461 :drawText;
+        %tmp.464 = lgetv %pt.6;
+        %tmp.465 = 0;
+        %tmp.466 = agetv %tmp.464 %tmp.465;
+        %tmp.468 = lgetv %pt.6;
+        %tmp.469 = 1;
+        %tmp.470 = agetv %tmp.468 %tmp.469;
+        %tmp.471 = getm $.Toybox.Graphics;
+        %tmp.472 = getv %tmp.471 :FONT_XTINY;
+        %tmp.473 = "Set athlete id\n In settings...";
+        %tmp.474 = getm $.Toybox.Graphics;
+        %tmp.475 = getv %tmp.474 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.461 %tmp.462(%tmp.466, %tmp.470, %tmp.472, %tmp.473, %tmp.475);
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_290_45_stop:
+        goto @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_290_15_if_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_290_15_if_false:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 294 15 ]
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_294_15_if_stmt:
+        %tmp.476 = getm $;
+        %tmp.477 = getv %tmp.476 :request_failed;
+        %tmp.478 = 0;
+        %tmp.479 = eq %tmp.477 %tmp.478;
+        bf %tmp.479 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_294_15_if_false;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_294_15_if_true:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_294_42_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 295 12 ]
+        [ "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_294_42_start" "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_294_42_stop" ]
+        %pt.7 = local;
+        %tmp.480 = self;
+        %tmp.481 = getv function %tmp.480 :polar_to_cartesian;
+        %tmp.483 = lgetv %dc;
+        %tmp.484 = 3;
+        %tmp.486 = lgetv %radius_ele.4;
+        %tmp.487 = mul %tmp.484 %tmp.486;
+        %tmp.488 = 180;
+        %tmp.489 = invoke %tmp.480 %tmp.481(%tmp.483, %tmp.487, %tmp.488);
+        %tmp.490 = as %tmp.489 Array<Number>;
+        lputv %pt.7 %tmp.490;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 296 12 ]
+        %tmp.491 = lgetv %dc;
+        %tmp.492 = getv function %tmp.491 :setColor;
+        %tmp.493 = getm $.Toybox.Graphics;
+        %tmp.494 = getv %tmp.493 :COLOR_WHITE;
+        %tmp.495 = getm $.Toybox.Graphics;
+        %tmp.496 = getv %tmp.495 :COLOR_TRANSPARENT;
+        invoke %tmp.491 %tmp.492(%tmp.494, %tmp.496);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 297 12 ]
+        %tmp.497 = lgetv %dc;
+        %tmp.498 = getv function %tmp.497 :drawText;
+        %tmp.500 = lgetv %pt.7;
+        %tmp.501 = 0;
+        %tmp.502 = agetv %tmp.500 %tmp.501;
+        %tmp.504 = lgetv %pt.7;
+        %tmp.505 = 1;
+        %tmp.506 = agetv %tmp.504 %tmp.505;
+        %tmp.507 = getm $.Toybox.Graphics;
+        %tmp.508 = getv %tmp.507 :FONT_XTINY;
+        %tmp.509 = "Syncing...\nIntervals.icu";
+        %tmp.510 = getm $.Toybox.Graphics;
+        %tmp.511 = getv %tmp.510 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.497 %tmp.498(%tmp.502, %tmp.506, %tmp.508, %tmp.509, %tmp.511);
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_294_42_stop:
+        goto @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_294_15_if_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_294_15_if_false:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 298 15 ]
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_298_15_if_stmt:
+        %tmp.512 = getm $;
+        %tmp.513 = getv %tmp.512 :request_failed;
+        %tmp.514 = 200;
+        %tmp.515 = ne %tmp.513 %tmp.514;
+        bf %tmp.515 @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_298_15_if_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_298_15_if_true:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_298_44_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 299 12 ]
+        [ "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_298_44_start" "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_298_44_stop" ]
+        %pt.8 = local;
+        %tmp.516 = self;
+        %tmp.517 = getv function %tmp.516 :polar_to_cartesian;
+        %tmp.519 = lgetv %dc;
+        %tmp.520 = 3;
+        %tmp.522 = lgetv %radius_ele.4;
+        %tmp.523 = mul %tmp.520 %tmp.522;
+        %tmp.524 = 180;
+        %tmp.525 = invoke %tmp.516 %tmp.517(%tmp.519, %tmp.523, %tmp.524);
+        %tmp.526 = as %tmp.525 Array<Number>;
+        lputv %pt.8 %tmp.526;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 300 12 ]
+        %tmp.527 = lgetv %dc;
+        %tmp.528 = getv function %tmp.527 :setColor;
+        %tmp.529 = getm $.Toybox.Graphics;
+        %tmp.530 = getv %tmp.529 :COLOR_WHITE;
+        %tmp.531 = getm $.Toybox.Graphics;
+        %tmp.532 = getv %tmp.531 :COLOR_TRANSPARENT;
+        invoke %tmp.527 %tmp.528(%tmp.530, %tmp.532);
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 301 12 ]
+        %tmp.533 = lgetv %dc;
+        %tmp.534 = getv function %tmp.533 :drawText;
+        %tmp.536 = lgetv %pt.8;
+        %tmp.537 = 0;
+        %tmp.538 = agetv %tmp.536 %tmp.537;
+        %tmp.540 = lgetv %pt.8;
+        %tmp.541 = 1;
+        %tmp.542 = agetv %tmp.540 %tmp.541;
+        %tmp.543 = getm $.Toybox.Graphics;
+        %tmp.544 = getv %tmp.543 :FONT_XTINY;
+        %tmp.545 = "Request failed\n";
+        %tmp.547 = getv ? :request_failed;
+        %tmp.548 = getv function %tmp.547 :toString;
+        %tmp.549 = invoke %tmp.547 %tmp.548();
+        %tmp.550 = add %tmp.545 %tmp.549;
+        %tmp.551 = getm $.Toybox.Graphics;
+        %tmp.552 = getv %tmp.551 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.533 %tmp.534(%tmp.538, %tmp.542, %tmp.544, %tmp.550, %tmp.552);
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_298_44_stop:
+        goto @_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_298_15_if_end;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_298_15_if_end:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_294_15_if_end:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_290_15_if_end:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_286_14_if_end:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_283_8_if_end:
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_263_40_stop:
+    }
+    [ @file = "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc"; @line = 308; ]
+    function onHide() as Void {
+    }
+    //! Show the result or status of the web request
+    //! @param args Data from the web request, or error message
+    [ @file = "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc"; @line = 313; ]
+    public
+    function onReceive(args as Dictionary or String or Null) as Void {
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_313_76_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc" 314 8 ]
+        %tmp.1 = getm $.Toybox.WatchUi;
+        %tmp.2 = getv function %tmp.1 :requestUpdate;
+        invoke %tmp.1 %tmp.2();
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4View_mc_313_76_stop:
+    }
+}
+[ @file = "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4View.mc"; @line = 1; ]
+<init> {
+}

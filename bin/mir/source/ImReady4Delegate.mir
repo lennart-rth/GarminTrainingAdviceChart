@@ -1,0 +1,51 @@
+[ @file = "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4Delegate.mc"; @line = 7; ]
+import Toybox.WatchUi;
+[ @file = "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4Delegate.mc"; @line = 8; ]
+import Toybox.Lang;
+[ @file = "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4Delegate.mc"; @line = 11; ]
+class ImReady4Delegate extends WatchUi.BehaviorDelegate{
+    [ @file = "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4Delegate.mc"; @line = 11; ]
+    <init> {
+    }
+    [ @file = "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4Delegate.mc"; @line = 11; ]
+    static
+    <init> {
+    }
+    //! Set up the callback to the view
+    //! @param handler Callback method for when data is received
+    [ @file = "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4Delegate.mc"; @line = 16; ]
+    public
+    function initialize(handler as (callback(args as Dictionary or String or Null) as Void)) as Void {
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4Delegate_mc_16_96_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4Delegate.mc" 17 8 ]
+        %tmp.1 = getm $.Toybox.WatchUi;
+        %tmp.2 = getv %tmp.1 :BehaviorDelegate;
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4Delegate_mc_16_96_stop:
+    }
+    //! On a select event, make a web request
+    //! @return true if handled, false otherwise
+    [ @file = "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4Delegate.mc"; @line = 22; ]
+    public
+    function onNextPage() as Boolean {
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4Delegate_mc_22_44_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4Delegate.mc" 23 8 ]
+        [ "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4Delegate_mc_22_44_start" "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4Delegate_mc_22_44_stop" ]
+        %request.1 = local;
+        %tmp.4 = getv ? :IntervalsRequest;
+        %tmp.1 = newc %tmp.4 ();
+        lputv %request.1 %tmp.1;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4Delegate.mc" 24 8 ]
+        %tmp.5 = lgetv %request.1;
+        %tmp.6 = getv function %tmp.5 :makeRequest;
+        invoke %tmp.5 %tmp.6();
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4Delegate.mc" 25 8 ]
+        %tmp.7 = true;
+        ret %tmp.7;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4Delegate_mc_22_44_stop:
+    }
+}
+[ @file = "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4Delegate.mc"; @line = 7; ]
+<init> {
+}

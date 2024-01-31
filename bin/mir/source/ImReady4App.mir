@@ -1,0 +1,80 @@
+[ @file = "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4App.mc"; @line = 1; ]
+import Toybox.Application;
+[ @file = "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4App.mc"; @line = 2; ]
+import Toybox.Lang;
+[ @file = "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4App.mc"; @line = 3; ]
+import Toybox.WatchUi;
+[ @file = "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4App.mc"; @line = 5; ]
+class ImReady4App extends Application.AppBase{
+    [ @file = "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4App.mc"; @line = 5; ]
+    <init> {
+    }
+    [ @file = "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4App.mc"; @line = 5; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4App.mc"; @line = 7; ]
+    public
+    function initialize() as Void {
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4App_mc_7_33_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4App.mc" 8 8 ]
+        %tmp.2 = getv ? :AppBase;
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4App_mc_7_33_stop:
+    }
+    [ @file = "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4App.mc"; @line = 12; ]
+    public
+    function onStart(state as Dictionary or Null) as Void {
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4App_mc_12_58_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4App.mc" 13 8 ]
+        [ "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4App_mc_12_58_start" "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4App_mc_12_58_stop" ]
+        %request.1 = local;
+        %tmp.4 = getv ? :IntervalsRequest;
+        %tmp.1 = newc %tmp.4 ();
+        lputv %request.1 %tmp.1;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4App.mc" 14 8 ]
+        %tmp.5 = lgetv %request.1;
+        %tmp.6 = getv function %tmp.5 :makeRequest;
+        invoke %tmp.5 %tmp.6();
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4App_mc_12_58_stop:
+    }
+    [ @file = "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4App.mc"; @line = 18; ]
+    function onStop(state as Dictionary or Null) as Void {
+    }
+    [ @file = "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4App.mc"; @line = 22; ]
+    function getInitialView() as Array<Views or InputDelegates> or Null {
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4App_mc_22_65_start:
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4App.mc" 23 8 ]
+        [ "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4App_mc_22_65_start" "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4App_mc_22_65_stop" ]
+        %view.1 = local;
+        %tmp.4 = getm $;
+        %tmp.5 = getv %tmp.4 :ImReady4View;
+        %tmp.1 = newc %tmp.5 ();
+        lputv %view.1 %tmp.1;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4App.mc" 24 8 ]
+        [ "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4App_mc_22_65_start" "_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4App_mc_22_65_stop" ]
+        %delegate.2 = local;
+        %tmp.9 = getm $;
+        %tmp.10 = getv %tmp.9 :ImReady4Delegate;
+        %tmp.11 = lgetv %view.1;
+        %tmp.12 = getv function %tmp.11 :method;
+        %tmp.14 = const :onReceive;
+        %tmp.15 = invoke %tmp.11 %tmp.12(%tmp.14);
+        %tmp.6 = newc %tmp.10 (%tmp.15);
+        lputv %delegate.2 %tmp.6;
+[ "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4App.mc" 25 8 ]
+        %tmp.16 = newa Array<Views or InputDelegates> 2;
+        %tmp.18 = lgetv %view.1;
+        %tmp.19 = dup %tmp.16;
+        %tmp.20 = aputv %tmp.19 0 %tmp.18;
+        %tmp.22 = lgetv %delegate.2;
+        %tmp.23 = dup %tmp.20;
+        %tmp.24 = aputv %tmp.23 1 %tmp.22;
+        ret %tmp.24;
+_Users_macbook_Documents_ConnectProjects_ImReady4_source_ImReady4App_mc_22_65_stop:
+    }
+}
+[ @file = "/Users/macbook/Documents/ConnectProjects/ImReady4/source/ImReady4App.mc"; @line = 1; ]
+<init> {
+}

@@ -1,0 +1,4 @@
+<properties>
+    <property id="intervalsKEY" type="string">YOUR-API-KEY</property>
+    <property id="intervalsID" type="string">YOUR-ATHLETE-ID</property>
+</properties>
