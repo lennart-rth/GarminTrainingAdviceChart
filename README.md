@@ -1,5 +1,5 @@
 # GarminTrainingAdviceChart
-Source code for [this]() app on the Garmin ConnectIQ Store.
+Source code for [this](https://apps.garmin.com/de-DE/apps/ef398e15-a23b-4553-ab25-4d105e9f48ce) app on the Garmin ConnectIQ Store.
 
 A polar chart based on HRV and resting heart rate data to easily interpret your daily training advice.
 
